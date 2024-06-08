@@ -1,0 +1,24 @@
+{
+  "name": "sort-visualizer",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": ["sorting", "visualizer", "algorithm"],
+  "license": "GPL-3.0",
+  "author": "RedeemedSpoon <QustoTemmo@protonmail.com> (https://github.com/RedeemedSpoon)",
+  "homepage": "https://github.com/RedeemedSpoon/Sort-Visualizer",
+  "description": "An Interactive Sorting Visualizer Website For The Curious Nerds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedeemedSpoon/Sort-Visualizer.git"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3"
+  }
+}
