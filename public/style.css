@@ -8,9 +8,9 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
   color: #111;
 }
 
@@ -58,4 +58,61 @@ main {
 footer {
   text-align: center;
   margin: 5rem 0 1rem 0;
+}
+
+#theme {
+  position: fixed;
+  display: flex;
+  width: 105px;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  border: #0099cc solid 1px;
+  background-color: #0099cc;
+  justify-content: right;
+  transition: 0.5s ease;
+}
+
+#theme img {
+  height: 26px;
+  display: none;
+}
+
+#theme:hover,
+#toggle:hover {
+  cursor: pointer;
+}
+
+#toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 72px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #eee;
+  border: #111 solid 1px;
+  transition: 0.5s ease;
+  z-index: 1;
+}
+
+.active {
+  display: block !important;
+}
+
+.left {
+  right: 18px !important;
+}
+
+.night {
+  background-color: #004488 !important;
+  justify-content: left !important;
+  border: #004488 solid 1px !important;
+}
+
+.dark {
+  color: #f9f9f9;
+  background-color: #111;
 }
