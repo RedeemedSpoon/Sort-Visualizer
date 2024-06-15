@@ -56,6 +56,67 @@ header > * {
   height: 50px;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 30px;
+  z-index: 4;
+  color: #111;
+  background-color: #f9f9f9;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  overflow-x: hidden;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -63,14 +124,14 @@ main {
   margin: 5% 20%;
 }
 
-section {
+main section {
   display: flex;
   align-items: center;
   column-gap: 7.5rem;
-  margin: 3rem 0;
+  margin: 7.5rem 0;
 }
 
-section > div {
+main section > div {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -79,10 +140,11 @@ section > div {
 button {
   padding: 1rem 2rem;
   color: #f9f9f9;
-  background-color: #df9720;
   border: none;
+  background-color: #df9720;
   border-radius: 10px;
   font-size: 1.5rem;
+  width: 100%;
 }
 
 body.dark button {
@@ -91,12 +153,23 @@ body.dark button {
 
 button:hover {
   cursor: pointer;
-  background-color: #b2791a;
+  background-color: #c57a1a;
 }
 
 footer {
   text-align: center;
   margin: 5rem 0 1rem 0;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
 }
 
 #theme {
@@ -151,7 +224,7 @@ footer {
   border: #004488 solid 1px !important;
 }
 
-.dark {
+.dark, #dark-mode {
   color: #f9f9f9;
   background-color: #111;
 }
