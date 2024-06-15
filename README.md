@@ -42,7 +42,7 @@ This interactive Sort Visualizer is a web application designed to bring sorting 
 - Bead Sort
 - Spaghetti Sort
 - bitonic Sort
-- Gogo Sort
+- Bogo Sort
 - Stooge Sort
 
 ## Custom Algorithms
