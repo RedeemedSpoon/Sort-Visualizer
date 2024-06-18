@@ -28,7 +28,13 @@ allSorts.forEach((sortAlgo) => {
 app.get('/custom', async (req, res) => {
   const example = await getInfo('custom');
   const title = 'Custom Sort';
-  res.render('custom.ejs', {year, title, example});
+  res.render('custom.ejs', {year, title, data});
+});
+
+app.get('/random', (req, res) => {
+  const randomNumber = Math.floor(Math.random() * allSorts.length);
+  const algo = allSorts[randomNumber];
+  res.redirect(`/${algo}`);
 });
 
 const getInfo = async (algo) => {

@@ -1,6 +1,69 @@
 <%- include('header') %>
 <main>
-  <h1><%= title %></h1>
-  <h1><%= data %></h1>
+  <div id="playground">
+    <h1 style="font-size: 55px"><%= data.Name %> Sort</h1>
+    <div>
+      <button id="run">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+          <path
+            d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+        </svg>
+      </button>
+      <button id="pause">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+          <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
+        </svg>
+      </button>
+      <button id="shuffle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+          <path d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
+          <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="canvas"></div>
+  <div id="range">
+    <div>
+      <label for="speed">Algorithm Speed :</label>
+      <input type="range" min="10" max="100" value="50" id="speed" />
+    </div>
+    <div>
+      <label for="number">Array Size :</label>
+      <input type="range" min="10" max="250" value="50" id="number" />
+    </div>
+  </div>
+  <div id="description">
+    <div id="info">
+      <h1><%= data.Name %> Sort :</h1>
+      <small style="margin-bottom: -10px">Author(s) : <%= data.Author %></small>
+      <small>Date : <%= data.Date %></small>
+      <p><%= data.Description %></p>
+    </div>
+    <div id="stats">
+      <table>
+        <tr>
+          <td class="label">Time Complexity</td>
+          <td><%= data.Complexity.Time %></td>
+        </tr>
+        <tr>
+          <td class="label">Best Case</td>
+          <td><%= data.Complexity.Best %></td>
+        </tr>
+        <tr>
+          <td class="label">Worst Case</td>
+          <td><%= data.Complexity.Worst %></td>
+        </tr>
+        <tr>
+          <td class="label">Space Complexity</td>
+          <td><%= data.Complexity.Space %></td>
+        </tr>
+        <tr>
+          <td class="label">Stable</td>
+          <td><%= data.Complexity.Stable %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </main>
 <%- include('footer') %>
