@@ -1,5 +1,5 @@
-const themeToggle = document.getElementById('theme');
-const themeToggleBtn = document.getElementById('toggle');
+const themeSwitch = document.getElementById('theme');
+const themeSwitchBtn = document.getElementById('toggle');
 const lightThemeImg = document.getElementById('light');
 const darkThemeImg = document.getElementById('dark');
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   theme === 'dark' && addDarkTheme();
 });
 
-[themeToggle, themeToggleBtn].forEach((element) => {
+[themeSwitch, themeSwitchBtn].forEach((element) => {
   element.addEventListener('click', () => {
     lightThemeImg.classList.contains('active') ? addDarkTheme() : removeDarkTheme();
     const theme = document.body.classList.contains('dark') ? 'dark' : 'light';
@@ -52,8 +52,8 @@ const addDarkTheme = () => {
   document.body.classList.add('dark');
   lightThemeImg.classList.remove('active');
   darkThemeImg.classList.add('active');
-  themeToggle.classList.add('night');
-  themeToggleBtn.classList.add('left');
+  themeSwitch.classList.add('night');
+  themeSwitchBtn.classList.add('left');
   navBar.id = 'dark-mode';
 };
 
@@ -61,7 +61,7 @@ const removeDarkTheme = () => {
   document.body.classList.remove('dark');
   lightThemeImg.classList.add('active');
   darkThemeImg.classList.remove('active');
-  themeToggle.classList.remove('night');
-  themeToggleBtn.classList.remove('left');
+  themeSwitch.classList.remove('night');
+  themeSwitchBtn.classList.remove('left');
   navBar.removeAttribute('id');
 };

@@ -8,10 +8,9 @@ This interactive Sort Visualizer is a web application designed to bring sorting 
 ## How To Use
 
 - **Choose an Algorithm:** Select the sorting algorithm you want to visualize from the menu list.
-- **Array Size:** Choose the desired size of the array set you want to sort.
-- **Speed Controls:** You can use speed controls to adjust the animation speed to slow down or speed up.
+- **Change Array Size:** Choose the desired size of the array set you want to sort.
+- **Modify Speed Controls:** Use speed controls to adjust the animation speed to slow down or speed up.
 - **Run Visualization:** Click the "Run" button to start the visualization.
-- **View Stats:** You can easily view the number of comparisons and swaps that took place during the visualization as well as the time it took to sort the data.
 
 ## Algorithms Present
 
@@ -51,7 +50,7 @@ You can create your own algorithm in the custom section. Just type in you code a
 
 ## License
 
-This software is distributed under the GNU General Public License v3.0 (GPLv3). You can find the full license text [here](LICENSE) to read more.
+The code of the web app is distributed under the GNU General Public License v3.0 (GPLv3). You can find the full license text [here](LICENSE) to read more.
 
 ## Contributions
 

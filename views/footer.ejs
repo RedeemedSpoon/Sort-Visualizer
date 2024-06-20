@@ -8,5 +8,8 @@
     </div>
     <div id="overlay"></div>
     <script src="/script.js"></script>
+    <% if (!["Home", "Error 404"].includes(title)) { %>
+      <script src="/sort.js"></script>
+    <% } %>
   </body>
 </html>
