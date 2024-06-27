@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Bogo Sort",
+  "Date": "Unknown",
+  "Author": "Unknown",
+  "Description": "Bogo sort is a humorous (and inefficient) sorting algorithm that relies on randomly shuffling the elements and checking if the list is sorted after each shuffle. If it's not sorted, the shuffling continues. While theoretically, there's a chance the list might become sorted by random luck, bogo sort is not intended for practical use due to its unpredictable and potentially very slow execution time.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n * n!)",
+    "Best": "O(n)",
+    "Worst": "Infinite",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

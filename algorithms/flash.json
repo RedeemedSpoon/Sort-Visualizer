@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Flash Sort",
+  "Date": "1998",
+  "Author": "Karl-Dietrich Neubert",
+  "Description": "Flash sort is a hybrid sorting algorithm that combines the strengths of radix sort and partitioning. It works by creating multiple partitions based on a sample of the input data. Elements are then distributed into these partitions using counting sort. Finally, each partition is sorted individually using insertion sort.\n\nFlash sort is known for its efficiency in specific scenarios and is sometimes used in specialized sorting libraries. However, its complexity depends on factors like the chosen sample size and the distribution of the input data.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n + r)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(n)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

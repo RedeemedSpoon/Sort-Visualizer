@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 
 const comparisonSort = ['heap', 'merge', 'tim', 'quick', 'shell', 'bubble', 'insertion', 'cocktail', 'gnome', 'pancake', 'selection'];
 const nonComparisonSort = ['pigeonhole', 'radix', 'counting', 'bucket', 'flash'];
-const otherSort = ['bead', 'spaghetti', 'bitonic', 'bogo', 'stooge'];
+const otherSort = ['bead', 'spaghetti', 'bitonic', 'bogo', 'slow'];
 const allSorts = [...comparisonSort, ...nonComparisonSort, ...otherSort];
 
 app.set('view engine', 'ejs');
@@ -26,9 +26,8 @@ allSorts.forEach((sortAlgo) => {
 });
 
 app.get('/custom', async (req, res) => {
-  const data = await getInfo('custom');
   const title = 'Custom Sort';
-  res.render('custom.ejs', {year, title, data});
+  res.render('custom.ejs', {year, title});
 });
 
 app.get('/random', (req, res) => {

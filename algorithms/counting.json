@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Counting Sort",
+  "Date": "1960s",
+  "Author": "Unknown",
+  "Description": "Counting sort is a sorting algorithm that works well when the input data has a limited range of values. It creates a temporary array (counting array) with a size equal to the range of possible values. Each element in the input array is used as an index to increment the corresponding element in the counting array.\n\nThe counting array now represents the frequency of each value in the original array. By iterating through the counting array and using the frequencies to place elements in the output array, the sorted output is generated.\n\nCounting sort has a time complexity of O(n + r), where r is the range of possible values. However, it requires additional space for the counting array and is most effective when the range of values is relatively small compared to the input size.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n + r)",
+    "Best": "O(n + r)",
+    "Worst": "O(n + r)",
+    "Space": "O(n + r)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

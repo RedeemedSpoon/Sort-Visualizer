@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Spaghetti Sort",
+  "Date": "1984",
+  "Author": "A. K. Dewdney",
+  "Description": "Spaghetti sort, similar to bead sort, is a theoretical sorting algorithm that involves manipulating physical spaghetti strands. The strands are initially mixed, and then sorting is achieved by repeatedly picking a random pair of strands and swapping them if they are in the wrong order. Due to its reliance on physical manipulation and randomness, spaghetti sort is not a practical sorting method for most applications.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n)",
+    "Best": "O(n)",
+    "Worst": "O(n)",
+    "Space": "O(n²)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

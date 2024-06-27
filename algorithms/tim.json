@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Tim Sort",
+  "Date": "2002",
+  "Author": "Tim Peters",
+  "Description": "Timsort is a hybrid sorting algorithm that combines the strengths of insertion sort and merge sort. It is often used in Java's Arrays.sort() method due to its efficiency for most real-world data sets.\n\nTimsort initially partitions the input array into runs (partially sorted sub-arrays). For small runs, insertion sort is applied for its speed. When merging larger runs, a variant of merge sort is employed, optimized for already partially sorted data. This hybrid approach makes Timsort generally faster than pure insertion sort or merge sort for most data.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n log n)",
+    "Best": "O(n)",
+    "Worst": "O(n log n)",
+    "Space": "O(n)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

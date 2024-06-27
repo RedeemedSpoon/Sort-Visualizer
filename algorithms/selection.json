@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Selection Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Selection sort works by repeatedly finding the minimum (or maximum) element in the unsorted portion of the array and swapping it with the first element in that unsorted portion. This process iterates until the entire array is sorted.\n\nSelection sort is conceptually easy to understand but suffers from a time complexity of O(n²) in the worst case. This is because it involves finding the minimum/maximum element in each pass, leading to redundant comparisons.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n²)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

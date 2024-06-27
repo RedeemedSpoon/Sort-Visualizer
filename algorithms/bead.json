@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Bead Sort",
+  "Date": "2002",
+  "Author": "Joshua J. Arulanandham, Cristian S. Calude and Michael J. Dinneen",
+  "Description": "Bead sort, also known as counting sort with linked lists, is a less common sorting technique that utilizes physical beads with unique colors to represent the data. It relies on the ability to physically manipulate the beads based on their colors. While conceptually interesting, bead sort is a theoretical algorithm not typically used in practical sorting tasks.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(S)",
+    "Best": "O(n)",
+    "Worst": "O(S)",
+    "Space": "O(n²)",
+    "Stable": "Unknown"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-
