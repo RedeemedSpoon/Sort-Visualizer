@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Quick Sort",
+  "Date": "1959",
+  "Author": "Tony Hoare",
+  "Description": "Quicksort is a divide-and-conquer sorting algorithm known for its efficiency. It operates by selecting a pivot element from the data structure (typically an array) and partitioning the remaining elements into two sub-arrays. Elements smaller than the pivot are placed in a sub-array to its left, and elements larger than the pivot are placed in a sub-array to its right.\n\nThis partitioning is achieved by iterating through the array while maintaining two indices: one for the left sub-array and another for the right. The pivot itself can be chosen in various ways, but common strategies include selecting the first, last, or a median element. Once the partitioning is complete, quicksort recursively sorts the two sub-arrays independently. This process continues until all sub-arrays have a single element (considered sorted) or become empty.\n\nThe average-case time complexity of quicksort is O(n log n), making it significantly faster than bubble sort or insertion sort for large datasets. However, its worst-case complexity can deteriorate to O(n²), which occurs when the chosen pivot consistently leads to unbalanced partitions.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n log n)",
+    "Best": "O(n log n)",
+    "Worst": "O(n²)",
+    "Space": "O(log n)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

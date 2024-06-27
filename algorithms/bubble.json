@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Bubble Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Bubble sort is a simple sorting algorithm that iterates repeatedly through the input array. In each pass, it compares adjacent elements and swaps them if they are in the wrong order (larger element comes before the smaller one).\n\nThis process is akin to bubbles of larger elements gradually rising to the end of the array. While conceptually straightforward, bubble sort has a time complexity of O(n²) in the worst case, making it inefficient for large datasets.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

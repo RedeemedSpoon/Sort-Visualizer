@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Pigeonhole Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Pigeonhole sort is a sorting algorithm that relies on a fixed-size array (pigeonhole) to represent the range of possible values in the input data. It works under the assumption that the data has a limited range of values.\n\nEach element in the input array is used as an index to place it in the corresponding pigeonhole. After all elements are placed, the pigeonhole array is iterated through, and the elements within each pigeonhole are output, effectively sorting them.\n\n While pigeonhole sort has a time complexity of O(n + 2ᴷ), where k is the range of possible values, it's limited by the requirement of a fixed-size pigeonhole array and a known value range. Its applicability is restricted to specific data scenarios.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n + 2ᴷ)",
+    "Best": "O(n + 2ᴷ)",
+    "Worst": "O(n + 2ᴷ)",
+    "Space": "O(2ᴷ)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

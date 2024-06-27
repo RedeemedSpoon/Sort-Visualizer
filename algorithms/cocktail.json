@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Cocktail Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Cocktail sort, also known as bidirectional bubble sort, is a variation of bubble sort that iterates through the array in both forward and backward directions. In each pass, it compares adjacent elements and swaps them if necessary. This process continues until a pass completes without any swaps, indicating the array is sorted.\n\nWhile it might seem like a simple improvement over bubble sort, cocktail sort can be slightly more efficient for specific data patterns, particularly when larger elements are clustered near the beginning or end of the array. However, its overall time complexity remains O(n²), making it unsuitable for very large datasets.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

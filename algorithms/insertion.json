@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Insertion Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Insertion sort iterates through the input array, considering each element from the second one onwards. It takes this element and inserts it into its correct position within the sub-array already considered to be sorted. This insertion is achieved by shifting larger elements in the sub-array one position to the right, creating a space for the element being inserted.\n\nInsertion sort is efficient for small arrays or partially sorted data (where many elements are already in their correct positions). However, its time complexity of O(n^2) in the worst case becomes a disadvantage for large datasets.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

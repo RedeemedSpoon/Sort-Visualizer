@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Gnome Sort",
+  "Date": "2000",
+  "Author": "Hamid Sarbazi-Azad",
+  "Description": "Gnome sort, also called the Stefano algorithm, is a relatively simple sorting technique with a unique approach. It maintains a single 'pivot' element and compares it with the element ahead. If they are in order, the pivot is shifted one position ahead. If not, they are swapped, and the process repeats with the swapped element becoming the new pivot.\n\nThis process continues until the pivot reaches the end of the array, indicating the entire array is sorted. Gnome sort has an average-case time complexity of O(n) but can degrade to O(n²) in the worst case. While potentially faster than bubble sort for some datasets, its niche nature limits its widespread adoption.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

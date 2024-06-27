@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Merge Sort",
+  "Date": "1945",
+  "Author": "John von Neumann",
+  "Description": "Merge sort is another divide-and-conquer algorithm that excels in sorting linked lists or arrays. It works by recursively dividing the input data structure into smaller sub-arrays containing a single element each (base case).\n\nIn the merge phase, adjacent sub-arrays are combined while maintaining the sorted order. This is achieved by comparing elements from both sub-arrays and inserting the smaller one into the final merged sub-array. This process continues until all sub-arrays are merged into a single sorted array.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n log n)",
+    "Best": "O(n log n)",
+    "Worst": "O(n log n)",
+    "Space": "O(n)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

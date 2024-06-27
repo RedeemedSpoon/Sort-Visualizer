@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Heap Sort",
+  "Date": "1964",
+  "Author": "J. W. J. Williams",
+  "Description": "Heap sort is a sorting algorithm that utilizes a heap data structure for efficient element arrangement. It follows a divide-and-conquer approach, initially building a max-heap (where the root has the largest value) from the input array. This process involves repeatedly swapping elements to ensure the heap property holds (parent element greater than or equal to children).\n\nOnce the max-heap is constructed, the largest element (root) is extracted and placed at the end of the sorted array. The heap is then rearranged by swapping the root with the last element and restoring the heap property. This process of extraction, rearrangement, and swapping continues until the entire array is sorted in descending order. For ascending order, a min-heap (root has the smallest value) would be used.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n log n)",
+    "Best": "O(n log n)",
+    "Worst": "O(n log n)",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

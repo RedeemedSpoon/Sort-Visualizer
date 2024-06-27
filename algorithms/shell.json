@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Shell Sort",
+  "Date": "1959",
+  "Author": "Donald Shell",
+  "Description": "Shell sort is an improvement over insertion sort, introducing the concept of gaps (distances between elements compared during insertion). It iterates through the array, comparing elements at certain gap intervals and performing swaps if necessary.\n\nThe initial gap typically starts large, allowing elements far apart in the array to be compared and potentially swapped, promoting a more sorted state. Gradually, smaller gaps are used, refining the sorted order until a gap of 1 is reached, effectively performing a standard insertion sort.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n⁴/³)",
+    "Best": "O(n log n)",
+    "Worst": "O(n³/²)",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Bitonic Sort",
+  "Date": "1960s",
+  "Author": "Kenneth E. Batcher",
+  "Description": "Bitonic sort is a sorting algorithm designed for parallel computing environments. It operates on a bitonic sequence (a sequence that is first increasing and then decreasing, or vice versa). The algorithm recursively divides the sequence into smaller bitonic sub-sequences and sorts them using a specific compare-swap operation.\n\n Bitonic sort leverages the capabilities of parallel processors to achieve efficient sorting. However, its practical use often requires specialized hardware or algorithms tailored for parallel execution.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(log² n)",
+    "Best": "O(log² n)",
+    "Worst": "O(n log² n)",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

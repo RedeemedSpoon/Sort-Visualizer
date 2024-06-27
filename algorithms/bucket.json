@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Bucket Sort",
+  "Date": "1960s",
+  "Author": "Joseph J. Aiken and Robert Sedgewick",
+  "Description": "Bucket sort is a sorting technique that divides the input data into a fixed number of buckets (sub-arrays). Each bucket is then sorted individually using a suitable sorting algorithm like insertion sort. Finally, the sorted buckets are concatenated to form the final sorted output.\n\nThe efficiency of bucket sort heavily relies on choosing the appropriate number of buckets and a sorting algorithm for the buckets. It can be very efficient for data with a uniform distribution within a specific range. However, for skewed distributions or large ranges, bucket sort might require adjustments or become less effective.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n + k)",
+    "Best": "O(n + k)",
+    "Worst": "O(n² * k)",
+    "Space": "O(n + k)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

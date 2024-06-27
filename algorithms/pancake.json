@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Pancake Sorting",
+  "Date": "1970s",
+  "Author": "Jacob Eli Goodman",
+  "Description": "Pancake sort, despite its intriguing name, operates on a more theoretical level. It envisions an array of elements like pancakes on a griddle. The algorithm involves 'flipping' subsequences within the array to bring the largest element to the end. This process is repeated, progressively reducing the unsorted portion of the array.\n\nPancake sort has a worst-case time complexity of O(n²) but finds application in some theoretical computer science problems. However, due to its flipping operation being impractical for most real-world implementations, it's not commonly used for practical sorting tasks.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "No"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-

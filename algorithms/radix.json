@@ -1,14 +1,14 @@
 {
-  "Name": "",
-  "Date": "",
-  "Author": "",
-  "Description": "",
+  "Name": "Radix Sort",
+  "Date": "Ancient",
+  "Author": "Unknown",
+  "Description": "Radix sort is a non-comparison-based sorting technique that exploits the positional nature of numbers (e.g., digits in base-10). It works by repeatedly sorting the input data on each digit position (least significant digit first) using a counting sort or similar stable sorting algorithm.\n\nAfter a pass on a particular digit position, the elements are placed in stable sub-lists based on their digit values. These sub-lists are then concatenated to form a partially sorted list. The process is repeated for higher-order digit positions until the entire array is sorted.\n\nRadix sort has a time complexity of O(n * k/d), where k is the number of digits and d is the number of elements. This makes it efficient for data with a fixed number of digits or where values fall within a specific range.",
   "Complexity": {
-    "Time": "",
-    "Best": "",
-    "Worst": "",
-    "Space": "",
-    "Stable": ""
+    "Time": "O(n * k/d)",
+    "Best": "O(n)",
+    "Worst": "O(n * k/d)",
+    "Space": "O(n + 2ᵈ)",
+    "Stable": "Yes"
   },
   "Code": {
     "Python": "",
@@ -18,4 +18,3 @@
     "Rust": ""
   }
 }
-
