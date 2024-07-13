@@ -10,11 +10,12 @@
     "Space": "O(n²)",
     "Stable": "Unknown"
   },
+  "Algorithm": "",
   "Code": {
     "Python": "",
     "JavaScript": "",
+    "Java": "",
     "Go": "",
-    "C": "",
-    "Rust": ""
+    "C": ""
   }
 }
