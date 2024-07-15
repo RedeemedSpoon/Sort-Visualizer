@@ -12,7 +12,7 @@
     <% if (title.match(/sort/i)) {%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>eval(<%= data.Algorithm %>)</script>
+    <script><%- data.Algorithm %></script>
     <% } %>
   </head>
   <body>

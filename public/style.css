@@ -58,6 +58,10 @@ tr:last-child td {
   border-bottom: none !important;
 }
 
+pre {
+  tab-size: 4;
+}
+
 header {
   margin: 1rem 0;
   display: flex;
@@ -225,7 +229,8 @@ body.dark .bar {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin: 5rem 0;
+  margin: 4rem 1rem;
+  column-gap: 3rem;
 }
 
 #range div {
@@ -346,8 +351,9 @@ body.dark input[type='range']::-ms-thumb {
   background-color: #111;
 }
 
-#code-content > * {
-  display: none;
+.content {
+  display: none !important;
+  border-radius: 0 0 10px 10px;
   padding: 3rem 1rem;
 }
 
@@ -436,4 +442,34 @@ footer {
 #dark-mode {
   color: #f9f9f9;
   background-color: #111;
+}
+
+body.dark .hljs {
+  background: #222;
+  color: #ddd;
+}
+
+body.dark .hljs-tag .hljs-attr,
+body.dark .hljs-tag .hljs-name {
+  color: #ddd;
+}
+
+body.dark .hljs-deletion,
+body.dark .hljs-number,
+body.dark .hljs-quote,
+body.dark .hljs-selector-class,
+body.dark .hljs-selector-id,
+body.dark .hljs-string,
+body.dark .hljs-template-tag,
+body.dark .hljs-section,
+body.dark .hljs-title,
+body.dark .hljs-type {
+  color: #b52520;
+}
+
+body.dark .hljs-addition,
+body.dark .hljs-built_in,
+body.dark .hljs-bullet,
+body.dark .hljs-code {
+  color: #5ab200;
 }

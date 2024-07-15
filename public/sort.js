@@ -4,8 +4,16 @@ let speed = 2;
 let length = 100;
 let lineHeight = 0;
 let lineWidth = 0;
+let isRunning = false;
+let interval;
 
 // Functions
+function updateInterval() {
+  interval = setInterval(() => {
+    if (isRunning) runAlgorithm();
+  }, 100 / speed);
+}
+
 function draw(index, height) {
   const bar = document.createElement('div');
   bar.style.width = `${lineWidth}px`;
@@ -48,9 +56,11 @@ executeBtn.addEventListener('click', () => {
   if (pauseIcon.style.display === 'none') {
     runIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
+    isRunning = true;
   } else {
     runIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
+    isRunning = false;
   }
 });
 
@@ -80,6 +90,8 @@ speedSlide.addEventListener('input', () => {
   speed = speed.length === 1 ? `${speed}.00` : speed;
   speed = speed.length === 3 ? `${speed}0` : speed;
   speedValue.textContent = `(${speed})`;
+  clearInterval(interval);
+  updateInterval();
 });
 
 lengthSlide.addEventListener('input', () => {
@@ -108,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lengthSlide.value = length;
   speedSlide.value = speed;
 
+  updateInterval();
   shuffleBtn.click();
   document.querySelector('.Python').click();
   hljs.highlightAll();

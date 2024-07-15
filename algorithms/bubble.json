@@ -12,10 +12,10 @@
   },
   "Algorithm": "",
   "Code": {
-    "Python": "",
-    "JavaScript": "",
-    "Java": "",
-    "Go": "",
-    "C": ""
+    "Python": "def bubblesort(arr):\n\tn = len(arr)\n\t# Flag to track if any swaps occurred\n\tswapped = True\n\twhile swapped:\n\t\tswapped = False\n\t\tfor i in range(n - 1):\n\t\tif arr[i] > arr[i + 1]:\n\t\t\tarr[i], arr[i + 1] = arr[i + 1], arr[i]  # swap\n\t\t\tswapped = True\n\n# Test array\narr = [64, 34, 25, 12, 22, 11, 90]\nbubblesort(arr)\nprint('Sorted array is:', arr)",
+    "JavaScript": "function bubblesort(arr) {\n\tlet n = arr.length;\n\t// Flag to track if any swaps occurred\n\tlet swapped = true;\n\twhile (swapped) {\n\t\tswapped = false;\n\t\tfor (let i = 0; i < n - 1; i++) {\n\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t// Swap using destructuring\n\t\t\t[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];\n\t\t\tswapped = true;\n\t\t}\n\t\t}\n\t}\n}\n\n// Test array\nlet arr = [64, 34, 25, 12, 22, 11, 90];\nbubblesort(arr);\nconsole.log('Sorted array is:', arr);",
+    "Java": "public static void bubblesort(int[] arr) {\n\tint n = arr.length;\n\t// Flag to track if any swaps occurred\n\tboolean swapped = true;\n\twhile (swapped) {\n\t\tswapped = false;\n\t\tfor (int i = 0; i < n - 1; i++) {\n\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t// Swap elements\n\t\t\tint temp = arr[i];\n\t\t\tarr[i] = arr[i + 1];\n\t\t\tarr[i + 1] = temp;\n\t\t\tswapped = true;\n\t\t}\n\t\t}\n\t}\n\n\t// Test array\n\tint[] arr = {64, 34, 25, 12, 22, 11, 90};\n\tbublesort(arr);\n\tSystem.out.println(\"Sorted array is:\" + java.util.Arrays.toString(arr));\n}",
+    "Go": "func bubblesort(arr []int) {\n\tn := len(arr)\n\t// Flag to track if any swaps occurred\n\tswapped := true\n\tfor swapped {\n\t\tswapped = false\n\t\tfor i := 0; i < n-1; i++ {\n\t\tif arr[i] > arr[i+1] {\n\t\t\t// Swap elements\n\t\t\tarr[i], arr[i+1] = arr[i+1], arr[i]\n\t\t\tswapped = true\n\t\t}\n\t\t}\n\t}\n\n\t// Test array\n\tarr := []int{64, 34, 25, 12, 22, 11, 90}\n\tbubblesort(arr)\n\tfmt.Println(\"Sorted array is:\", arr)\n}",
+    "C": "void bubblesort(int arr[], int n) {\n\t// Flag to track if any swaps occurred\n\tint swapped = 1;\n\twhile (swapped) {\n\t\tswapped = 0;\n\t\tfor (int i = 0; i < n - 1; i++) {\n\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t// Swap elements\n\t\t\tint temp = arr[i];\n\t\t\tarr[i] = arr[i + 1];\n\t\t\tarr[i + 1] = temp;\n\t\t\tswapped = 1;\n\t\t}\n\t\t}\n\t}\n\n\t// Test array\n\tint arr[] = {64, 34, 25, 12, 22, 11, 90};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tbubblesort(arr, n);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n}"
   }
 }
