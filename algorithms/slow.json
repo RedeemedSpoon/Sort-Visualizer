@@ -12,10 +12,10 @@
   },
   "Algorithm": "",
   "Code": {
-    "Python": "",
-    "JavaScript": "",
-    "Java": "",
-    "Go": "",
-    "C": ""
+    "Python": "def slowsort(arr, lo, hi):\n\tif lo < hi:\n\t\tmid = (lo + hi) // 2\n\t\tmax_left = slowsort(arr, lo, mid)\n\t\tmax_right = slowsort(arr, mid + 1, hi)\n\t\tarr[hi] = max(max_left, max_right)\n\t\tslowsort(arr, lo, hi - 1)\n\treturn arr[hi]\n\n# Test array\narr = [12, 11, 13, 5, 6, 7]\nprint('Sorted array is:', slowsort(arr.copy(), 0, len(arr) - 1))",
+    "JavaScript": "function slowsort(arr, lo, hi) {\n\tif (lo < hi) {\n\t\tconst mid = Math.floor((lo + hi) / 2);\n\t\tconst maxLeft = slowsort(arr, lo, mid);\n\t\tconst maxRight = slowsort(arr, mid + 1, hi);\n\t\tarr[hi] = Math.max(maxLeft, maxRight);\n\t\tslowsort(arr, lo, hi - 1);\n\t}\n\treturn arr[hi];\n}\n\n// Test array\nconst arr = [12, 11, 13, 5, 6, 7];\nconsole.log('Sorted array is:', slowsort(arr.slice(), 0, arr.length - 1));",
+    "Java": "public class SlowSort {\n\tpublic static void slowsort(int[] arr, int lo, int hi) {\n\t\tif (lo < hi) {\n\t\t\tint mid = (lo + hi) / 2;\n\t\t\tint maxLeft = slowsort(arr, lo, mid);\n\t\t\tint maxRight = slowsort(arr, mid + 1, hi);\n\t\t\tarr[hi] = Math.max(maxLeft, maxRight);\n\t\t\tslowsort(arr, lo, hi - 1);\n\t\t}\n\t}\n\n\tpublic static void main(String[] args) {\n\t\tint[] arr = {12, 11, 13, 5, 6, 7};\n\t\tslowsort(arr, 0, arr.length - 1);\n\t\tSystem.out.print(\"Sorted array is: \");\n\t\tfor (int num : arr) {\n\t\t\tSystem.out.print(num + \" \");\n\t\t}\n\t}\n}",
+    "Go": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc slowsort(arr []int, lo, hi int) []int {\n\tif lo < hi {\n\t\tmid := (lo + hi) / 2\n\t\tmaxLeft := slowsort(arr[:mid+1], lo, mid)\n\t\tmaxRight := slowsort(arr[mid+1:], mid+1, hi)\n\t\tarr[hi] = max(maxLeft[len(maxLeft)-1], maxRight[len(maxRight)-1])\n\t\tslowsort(arr[:hi], lo, hi-1)\n\t}\n\treturn arr\n}\n\nfunc max(a, b int) int {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc main() {\n\tarr := []int{12, 11, 13, 5, 6, 7}\n\tsortedArr := slowsort(arr, 0, len(arr)-1)\n\tfmt.Println(\"Sorted array is:\", sortedArr)\n}",
+    "C": "#include <stdio.h>\n\nint max(int a, int b) {\n\treturn (a > b) ? a : b;\n}\n\nvoid slowsort(int arr[], int lo, int hi) {\n\tif (lo < hi) {\n\t\tint mid = (lo + hi) / 2;\n\t\tslowsort(arr, lo, mid);\n\t\tslowsort(arr, mid + 1, hi);\n\t\tarr[hi] = max(arr[hi], max(arr[lo], arr[mid]));\n\t\tslowsort(arr, lo, hi - 1);\n\t}\n}\n\nint main() {\n\tint arr[] = {12, 11, 13, 5, 6, 7};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tslowsort(arr, 0, n - 1);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n\tprintf(\"\\n\");\n\treturn 0;\n}"
   }
 }

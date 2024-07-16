@@ -12,10 +12,10 @@
   },
   "Algorithm": "",
   "Code": {
-    "Python": "",
-    "JavaScript": "",
-    "Java": "",
-    "Go": "",
-    "C": ""
+    "Python": "def bogosort(arr):\n\tdef is_sorted(arr):\n\t\tfor i in range(len(arr) - 1):\n\t\t\tif arr[i] > arr[i + 1]:\n\t\t\t\treturn False\n\t\treturn True\n\n\twhile not is_sorted(arr):\n\t\trandom.shuffle(arr)\n\treturn arr\n\n# Test array\narr = [12, 11, 13, 5, 6, 7]\nprint('Sorted array is:', bogosort(arr.copy()))",
+    "JavaScript": "function bogosort(arr) {\n\tfunction isSorted(arr) {\n\t\tfor (let i = 0; i < arr.length - 1; i++) {\n\t\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\treturn true;\n\t}\n\n\twhile (!isSorted(arr)) {\n\t\tarr.sort(() => Math.random() - 0.5);\n\t}\n\treturn arr;\n}\n\n// Test array\nconst arr = [12, 11, 13, 5, 6, 7];\nconsole.log('Sorted array is:', bogosort(arr.slice()));",
+    "Java": "public class BogoSort {\n\tpublic static boolean isSorted(int[] arr) {\n\t\tfor (int i = 0; i < arr.length - 1; i++) {\n\t\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\treturn true;\n\t}\n\n\tpublic static void bogosort(int[] arr) {\n\t\twhile (!isSorted(arr)) {\n\t\t\tshuffle(arr);\n\t\t}\n\t}\n\n\tprivate static void shuffle(int[] arr) {\n\t\tfor (int i = 0; i < arr.length; i++) {\n\t\t\tint j = (int) (Math.random() * (arr.length - i)) + i;\n\t\t\tint temp = arr[i];\n\t\t\tarr[i] = arr[j];\n\t\t\tarr[j] = temp;\n\t\t}\n\t}\n\n\tpublic static void main(String[] args) {\n\t\tint[] arr = {12, 11, 13, 5, 6, 7};\n\t\tbogosort(arr);\n\t\tSystem.out.print(\"Sorted array is: \");\n\t\tfor (int num : arr) {\n\t\t\tSystem.out.print(num + \" \");\n\t\t}\n\t}\n}",
+    "Go": "package main\n\nimport (\n\t\"math/rand\"\n)\n\nfunc isSorted(arr []int) bool {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tif arr[i] > arr[i+1] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\n\nfunc bogosort(arr []int) []int {\n\tfor !isSorted(arr) {\n\t\trand.Shuffle(len(arr), func(i, j int) { arr[i], arr[j] = arr[j], arr[i] })\n\t}\n\treturn arr\n}\n\nfunc main() {\n\tarr := []int{12, 11, 13, 5, 6, 7}\n\tsortedArr := bogosort(append([]int{}, arr...)) // copy the array\n\tprintln(\"Sorted array is:\", sortedArr)\n}",
+    "C": "#include <stdio.h>\n#include <stdlib.h>\n\nint isSorted(int arr[], int n) {\n\tfor (int i = 0; i < n - 1; i++) {\n\t\tif (arr[i] > arr[i + 1]) {\n\t\t\treturn 0; // 0 indicates not sorted\n\t\t}\n\t}\n\treturn 1; // 1 indicates sorted\n}\n\nvoid shuffle(int arr[], int n) {\n\tfor (int i = 0; i < n - 1; i++) {\n\t\tint j = rand() % (n - i) + i;\n\t\tint temp = arr[i];\n\t\tarr[i] = arr[j];\n\t\tarr[j] = temp;\n\t}\n}\n\nvoid bogosort(int arr[], int n) {\n\twhile (!isSorted(arr, n)) {\n\t\tshuffle(arr, n);\n\t}\n}\n\nint main() {\n\tint arr[] = {12, 11, 13, 5, 6, 7};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tbogosort(arr, n);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n\tprintf(\"\\n\");\n\treturn 0;\n}"
   }
 }
