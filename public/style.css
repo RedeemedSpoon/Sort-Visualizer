@@ -218,7 +218,9 @@ body.dark #playground svg {
 }
 
 .bar {
+  position: absolute;
   background-color: #151515;
+  margin-left: 20%;
 }
 
 body.dark .bar {
@@ -442,6 +444,16 @@ footer {
 #dark-mode {
   color: #f9f9f9;
   background-color: #111;
+}
+
+.moving {
+  transition: all 0.5s ease;
+  background-color: blue !important;
+  z-index: 2;
+}
+
+.success {
+  background-color: green !important;
 }
 
 body.dark .hljs {

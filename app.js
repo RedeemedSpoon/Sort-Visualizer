@@ -26,7 +26,7 @@ allSorts.forEach((sortAlgo) => {
 });
 
 app.get('/custom', async (req, res) => {
-  const title = 'Custom Sort';
+  const title = 'Custom';
   res.render('custom.ejs', {year, title});
 });
 
