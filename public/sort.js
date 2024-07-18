@@ -6,12 +6,23 @@ let lineHeight = 0;
 let lineWidth = 0;
 let isRunning = false;
 let isMuted = false;
+let firstRun = true;
 
 // Functions
-function sleep() {
+async function sleep() {
+  await until(() => isRunning || firstRun);
   return new Promise(function (resolve) {
     setTimeout(resolve, 500 / speed);
   });
+}
+
+function until(condition) {
+  const poll = (resolve) => {
+    if (condition()) resolve();
+    else setTimeout((_) => poll(resolve), 100);
+  };
+
+  return new Promise(poll);
 }
 
 function draw(index, height) {
@@ -21,17 +32,6 @@ function draw(index, height) {
   bar.style.left = `${index * lineWidth}px`;
   bar.classList.add('bar');
   canvas.appendChild(bar);
-}
-
-function place(oldIndex, newIndex) {
-  const bar = canvas.children[oldIndex];
-  bar.classList.add('moving');
-  bar.style.left = `${newIndex * lineWidth}px`;
-  play(array[newIndex]);
-
-  bar.addEventListener('transitionend', () => {
-    bar.classList.remove('moving');
-  });
 }
 
 function swap(i, j) {
@@ -61,7 +61,7 @@ function play(frequency) {
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
   oscillator.frequency.value = frequency * 5 + 100;
-  gainNode.gain.value = 0.035;
+  gainNode.gain.value = 0.015;
   oscillator.type = 'square';
 
   oscillator.start();
@@ -97,6 +97,7 @@ shuffleBtn.addEventListener('click', () => {
   canvas.innerHTML = '';
 
   array.forEach((height, index) => draw(index, height));
+  firstRun = true;
 });
 
 // Execute/Pause Button
@@ -105,15 +106,18 @@ const runIcon = executeBtn.childNodes[1];
 const pauseIcon = executeBtn.childNodes[3];
 
 executeBtn.addEventListener('click', () => {
+  isRunning = !isRunning;
+  shuffleBtn.disabled = isRunning;
+  lengthSlide.disabled = isRunning;
+
   if (pauseIcon.style.display === 'none') {
     runIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
-    isRunning = true;
-    run();
+    firstRun && run();
+    firstRun = false;
   } else {
     runIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
-    isRunning = false;
   }
 });
 

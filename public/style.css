@@ -447,13 +447,24 @@ footer {
 }
 
 .moving {
-  transition: all 0.5s ease;
+  transition: all 0.35s ease;
   background-color: blue !important;
   z-index: 2;
 }
 
 .success {
   background-color: green !important;
+}
+
+button:disabled,
+input:disabled {
+  opacity: 0.75;
+  cursor: not-allowed !important;
+}
+
+button:disabled:hover {
+  cursor: not-allowed !important;
+  background-color: #df9720;
 }
 
 body.dark .hljs {
