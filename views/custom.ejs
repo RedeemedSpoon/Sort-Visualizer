@@ -1,5 +1,79 @@
 <%- include('header') %>
 <main>
-  <h1>Your Custom Sort</h1>
+ <div id="playground">
+   <h1 style="font-size: 50px">Custom Sort</h1>
+   <div>
+     <button id="audio" title="Play Audio">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z" />
+         <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z" />
+         <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06" />
+       </svg>
+       <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+         <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
+       </svg>
+     </button>
+     <button id="execute" title="Run Algorithm">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+       </svg>
+       <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
+       </svg>
+     </button>
+     <button id="shuffle" title="Shuffle Array">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
+         <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
+       </svg>
+     </button>
+   </div>
+ </div>
+ <div id="canvas"></div>
+ <div id="range">
+   <div>
+     <label for="speed">Algorithm Speed <span id="speed-value">(2.00)</span> :</label>
+     <input type="range" step="0.01" min="1" max="5" value="2" id="speed" />
+   </div>
+   <div>
+     <label for="number">Array Size <span id="length-value">(100)</span> :</label>
+     <input type="range" min="10" max="250" value="100" id="length" />
+   </div>
+ </div>
+ <textarea id="code-editor" spellcheck="false">// Your code goes here
+
+// Follow the instructions written below to implement your code within this sort visualizer
+
+// Here is an example of a bubble sort implementation
+
+async function sort() {
+ for (var i = 0; i < array.length; i++) {
+   for (var j = 0; j < array.length - i - 1; j++) {
+     if (array[j] > array[j + 1]) {
+       await swap(j, j + 1);
+       await sleep();
+       if (firstRun) return;
+     }
+   }
+ }
+}</textarea>
+ <div id="instruction">
+   <h1>Your Own Custom Sort:</h1>
+   <p></p>To utilize this page, follow the instructions below and write your sorting algorithm code. After that, click 'Run' to visualize it. The page auto-evaluates your code without a 'Save' or 'Reset' button. Here are the essential functions:
+   <ul>
+     <li><b>sort() :</b> Your primary code should be within this function. It should be an asynchronous function, using async/await syntax. No parameters are required for this function. all of the function listed below are promeses so use await on each one.</li>
+     <li><b>swap() :</b> Use this function to swap two array elements. It takes two parameters, representing the indexes of the elements to be swapped.</li>
+     <li><b>place() :</b> This function is used to move an element to a specific index and shift the rest. It requires two parameters, the current and new indexes.</li>
+     <li><b>shuffle() :</b> This function shuffles the array. No parameters are needed.</li>
+   </ul>
+   <p>Other important aspects include:</p>
+   <ul>
+     <li><b>'array' variable :</b> The predefined array to be sorted. You should not create your own, use this for comparison.</li>
+     <li><b>sleep() function :</b> Delays the code execution. No parameters are required. use this everytime you alter the array</li>
+     <li><b>if (firstRun) return :</b> Stops the loop if the user clicks 'Shuffle' during a paused sort. Use this right after the sleep() function.</li>
+   </ul>
+   <p>For further guidance or custom sort creation, review the sort.js file in the console (accessible by pressing F12 or 'Inspect' button when right-clicking).</p>
+   <p><b>IMPORTANT NOTE:</b> Use the console for viewing, testing, and debugging your code. Open the console by pressing F12 or 'Inspect' button.<p>
+ </div>
 </main>
 <%- include('footer') %>

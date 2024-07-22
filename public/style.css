@@ -238,6 +238,7 @@ body.dark .bar {
 #range div {
   display: flex;
   column-gap: 1rem;
+  text-wrap: nowrap;
 }
 
 input[type='range'] {
@@ -359,6 +360,31 @@ body.dark input[type='range']::-ms-thumb {
   padding: 3rem 1rem;
 }
 
+#code-editor {
+  width: 100%;
+  height: 55vh;
+  padding: 2rem;
+  background-color: #f3f3f3;
+  border: 3px solid #111;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  overflow-y: scroll;
+  resize: none;
+}
+
+#code-editor:focus {
+  outline: none;
+}
+
+#instruction {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  margin: 3rem 0;
+  row-gap: 1rem;
+}
+
 body.dark .pressed {
   background-color: #333;
 }
@@ -369,6 +395,12 @@ body.dark #code-button img {
 }
 
 body.dark #code {
+  background-color: #151515;
+  border: 3px solid #333;
+}
+
+body.dark #code-editor {
+  color: #ddd;
   background-color: #151515;
   border: 3px solid #333;
 }

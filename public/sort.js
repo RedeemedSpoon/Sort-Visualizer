@@ -9,6 +9,16 @@ let isMuted = false;
 let firstRun = true;
 
 // Functions
+async function run() {
+  customPage && eval(codeEditor.value);
+  await sort();
+  if (!firstRun) {
+    success();
+    executeBtn.click();
+    firstRun = true;
+  }
+}
+
 async function sleep() {
   await until(() => isRunning || firstRun);
   return new Promise(function (resolve) {
@@ -34,13 +44,20 @@ function draw(index, height) {
   canvas.appendChild(bar);
 }
 
-function swap(i, j) {
-  [array[i], array[j]] = [array[j], array[i]];
+function getBar(index) {
+  for (let i = 0; i < canvas.children.length; i++) {
+    if (parseInt(canvas.children[i].style.left) == parseInt(index * lineWidth)) {
+      return canvas.children[i];
+    }
+  }
+}
 
-  bar1 = canvas.children[i];
-  bar2 = canvas.children[j];
+function swap(i, j) {
+  let bar1 = getBar(i);
+  let bar2 = getBar(j);
 
   [bar1.style.left, bar2.style.left] = [bar2.style.left, bar1.style.left];
+  [array[i], array[j]] = [array[j], array[i]];
   play((array[i] + array[j]) / 2);
 
   [bar1, bar2].forEach((bar) => {
@@ -50,6 +67,10 @@ function swap(i, j) {
     });
   });
 }
+
+function place() {}
+
+function shuffle() {}
 
 function play(frequency) {
   if (isMuted) return;
@@ -70,10 +91,15 @@ function play(frequency) {
 
 function success() {
   let i = 0;
-  setInterval(() => {
-    const bar = canvas.children[i];
+  let interval = setInterval(() => {
+    if (i >= array.length) {
+      clearInterval(interval);
+      return;
+    }
+
+    const bar = getBar(i);
     bar.classList.add('success');
-    setTimeout(() => bar.classList.remove('success'), 1000);
+    setTimeout(() => bar.classList.remove('success'), 750);
     play(array[i]);
     i++;
   }, 85);
@@ -159,18 +185,33 @@ lengthSlide.addEventListener('input', () => {
 });
 
 // Code Section
-const codeBtn = document.querySelectorAll('.btn');
-const codeContent = document.querySelectorAll('.content');
+const customPage = window.location.href.match(/custom/);
+const codeEditor = document.querySelector('textarea');
 
-codeBtn.forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    codeContent.forEach((content) => content.classList.remove('active'));
-    codeContent[index].classList.add('active');
-
-    codeBtn.forEach((btn) => btn.classList.remove('pressed'));
-    btn.classList.add('pressed');
+if (customPage) {
+  codeEditor.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const start = codeEditor.selectionStart;
+      const end = codeEditor.selectionEnd;
+      codeEditor.value = codeEditor.value.substring(0, start) + '\t' + codeEditor.value.substring(end);
+      codeEditor.selectionStart = start + 1;
+      codeEditor.selectionEnd = end + 1;
+    }
   });
-});
+} else {
+  const codeBtn = document.querySelectorAll('.btn');
+  const codeContent = document.querySelectorAll('.content');
+
+  codeBtn.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      codeContent.forEach((content) => content.classList.remove('active'));
+      codeContent[index].classList.add('active');
+      codeBtn.forEach((btn) => btn.classList.remove('pressed'));
+      btn.classList.add('pressed');
+    });
+  });
+}
 
 // On Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -178,6 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
   speedSlide.value = speed;
 
   shuffleBtn.click();
-  document.querySelector('.Python').click();
-  hljs.highlightAll();
+  !customPage && document.querySelector('.Python').click();
+  !customPage && hljs.highlightAll();
 });
