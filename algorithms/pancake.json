@@ -10,7 +10,7 @@
     "Space": "O(1)",
     "Stable": "No"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){for(let a=array.length;a>1;--a){let i=array.indexOf(Math.max(...array.slice(0,a)));if(i!=a-1){if(await flip(i),firstRun)return;if(await flip(a-1),firstRun)return}}}",
   "Code": {
     "Python": "def pancakesort(arr):\n\tn = len(arr)\n\twhile n > 1:\n\t\t# Find index of the maximum element in the unsorted part\n\t\tmax_index = arr.index(max(arr[:n]))\n\t\t# Flip elements from the beginning to the index of the maximum element\n\t\tarr = arr[:max_index + 1][::-1] + arr[max_index + 1:]\n\t\t# Flip elements from the beginning to the new end (excluding the maximum element)\n\t\tarr = arr[:n][::-1] + arr[n:]\n\t\tn -= 1  # Reduce the unsorted part\n\n# Test array\narr = [3, 2, 4, 1]\npancakesort(arr)\nprint('Sorted array is:', arr)",
     "JavaScript": "function pancakesort(arr) {\n\tlet n = arr.length;\n\twhile (n > 1) {\n\t\t// Find index of the maximum element in the unsorted part\n\t\tlet maxIndex = arr.indexOf(Math.max(...arr.slice(0, n)));\n\t\t// Flip elements from the beginning to the index of the maximum element\n\t\tarr.splice(0, maxIndex + 1).reverse();\n\t\t// Flip elements from the beginning to the new end (excluding the maximum element)\n\t\tarr.splice(0, n).reverse();\n\t\tn--;  // Reduce the unsorted part\n\t}\n\n\t// Test array\n\tlet arr = [3, 2, 4, 1];\n\tpancakesort(arr);\n\tconsole.log('Sorted array is:', arr);\n}",

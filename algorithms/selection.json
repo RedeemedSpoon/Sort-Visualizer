@@ -10,7 +10,7 @@
     "Space": "O(1)",
     "Stable": "No"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){for(let a=0;a<array.length-1;++a){let r=a;for(let t=a+1;t<array.length;t++)array[t]<array[r]&&(r=t);if(r!=a&&(swap(r,a),await sleep(),firstRun))return}}",
   "Code": {
     "Python": "def selectionsort(arr):\n\tn = len(arr)\n\tfor i in range(n):\n\t\t# Find the index of the minimum element in the unsorted part\n\t\tmin_index = i\n\t\tfor j in range(i + 1, n):\n\t\t\tif arr[j] < arr[min_index]:\n\t\t\t\tmin_index = j\n\t\t# Swap the minimum element with the first element of the unsorted part\n\t\tarr[i], arr[min_index] = arr[min_index], arr[i]\n\n# Test array\narr = [64, 25, 12, 22, 11]\nselectionsort(arr)\nprint('Sorted array is:', arr)",
     "JavaScript": "function selectionsort(arr) {\n\tlet n = arr.length;\n\tfor (let i = 0; i < n - 1; i++) {\n\t\t// Find the index of the minimum element in the unsorted part\n\t\tlet minIndex = i;\n\t\tfor (let j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIndex]) {\n\t\t\t\tminIndex = j;\n\t\t\t}\n\t\t}\n\t\t// Swap the minimum element with the first element of the unsorted part\n\t\t[arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];\n\t}\n\n\t// Test array\n\tlet arr = [64, 25, 12, 22, 11];\n\tselectionsort(arr);\n\tconsole.log('Sorted array is:', arr);\n}",

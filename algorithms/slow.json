@@ -10,7 +10,7 @@
     "Space": "O(n)",
     "Stable": "No"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){await async function a(t,n,r){if(n>=r)return;let i=parseInt((n+r)/2,10);await a(t,n,i),await a(t,i+1,r),t[r]<t[i]&&(swap(i,r),await sleep(),firstRun)||await a(t,n,r-1)}(array,0,array.length-1)}",
   "Code": {
     "Python": "def slowsort(arr, lo, hi):\n\tif lo < hi:\n\t\tmid = (lo + hi) // 2\n\t\tmax_left = slowsort(arr, lo, mid)\n\t\tmax_right = slowsort(arr, mid + 1, hi)\n\t\tarr[hi] = max(max_left, max_right)\n\t\tslowsort(arr, lo, hi - 1)\n\treturn arr[hi]\n\n# Test array\narr = [12, 11, 13, 5, 6, 7]\nprint('Sorted array is:', slowsort(arr.copy(), 0, len(arr) - 1))",
     "JavaScript": "function slowsort(arr, lo, hi) {\n\tif (lo < hi) {\n\t\tconst mid = Math.floor((lo + hi) / 2);\n\t\tconst maxLeft = slowsort(arr, lo, mid);\n\t\tconst maxRight = slowsort(arr, mid + 1, hi);\n\t\tarr[hi] = Math.max(maxLeft, maxRight);\n\t\tslowsort(arr, lo, hi - 1);\n\t}\n\treturn arr[hi];\n}\n\n// Test array\nconst arr = [12, 11, 13, 5, 6, 7];\nconsole.log('Sorted array is:', slowsort(arr.slice(), 0, arr.length - 1));",

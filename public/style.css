@@ -478,9 +478,21 @@ footer {
   background-color: #111;
 }
 
-.moving {
+.swap {
   transition: all 0.35s ease;
   background-color: blue !important;
+  z-index: 2;
+}
+
+.flip {
+  transition: all 0.35s ease;
+  background-color: red !important;
+  z-index: 2;
+}
+
+.shuffle {
+  transition: all 0.35s ease;
+  background-color: yellow !important;
   z-index: 2;
 }
 

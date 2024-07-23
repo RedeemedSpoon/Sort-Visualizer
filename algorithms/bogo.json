@@ -10,7 +10,7 @@
     "Space": "O(1)",
     "Stable": "No"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){function r(r){for(let f=0;f<r.length-1;f++)if(r[f]>r[f+1])return!1}for(;!r(array);)if(await shuffle(),firstRun)return}",
   "Code": {
     "Python": "def bogosort(arr):\n\tdef is_sorted(arr):\n\t\tfor i in range(len(arr) - 1):\n\t\t\tif arr[i] > arr[i + 1]:\n\t\t\t\treturn False\n\t\treturn True\n\n\twhile not is_sorted(arr):\n\t\trandom.shuffle(arr)\n\treturn arr\n\n# Test array\narr = [12, 11, 13, 5, 6, 7]\nprint('Sorted array is:', bogosort(arr.copy()))",
     "JavaScript": "function bogosort(arr) {\n\tfunction isSorted(arr) {\n\t\tfor (let i = 0; i < arr.length - 1; i++) {\n\t\t\tif (arr[i] > arr[i + 1]) {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\treturn true;\n\t}\n\n\twhile (!isSorted(arr)) {\n\t\tarr.sort(() => Math.random() - 0.5);\n\t}\n\treturn arr;\n}\n\n// Test array\nconst arr = [12, 11, 13, 5, 6, 7];\nconsole.log('Sorted array is:', bogosort(arr.slice()));",

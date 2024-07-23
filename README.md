@@ -41,8 +41,8 @@ This interactive Sort Visualizer is a web application designed to bring sorting 
 - Bead Sort
 - Spaghetti Sort
 - bitonic Sort
-- Bogo Sort
 - Slow Sort
+- Bogo Sort
 
 ## Custom Algorithms
 
