@@ -10,7 +10,7 @@
     "Space": "O(n + r)",
     "Stable": "Yes"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){const r=array.length;let a=Math.max(...array);const t=new Array(a+1).fill(0);for(let a=0;a<r;a++)t[array[a]]++;for(let r=1;r<=a;r++)t[r]+=t[r-1];for(let a=r-1;a>=0;a--){if(swap(a,t[array[a]]-1),await sleep(),firstRun)return;t[array[a]]--}for(let a=0;a<r;a++)array[a]>array[a+1]&&await sort()}",
   "Code": {
     "Python": "def counting_sort(arr):\n\tmin_value = min(arr)\n\tmax_value = max(arr)\n\tsize = max_value - min_value + 1\n\tcount = [0] * size\n\tfor i in arr:\n\t\tcount[i - min_value] += 1\n\tarr = []\n\ti = 0\n\tfor j in range(size):\n\t\tfor _ in range(count[j]):\n\t\t\tarr.append(j + min_value)\n\t\t\ti += 1\n\treturn arr\n\n# Test array\narr = [8, 3, 2, 7, 4, 6, 9]\nprint('Sorted array is:', counting_sort(arr))",
     "JavaScript": "function countingSort(arr) {\n\tlet min_value = Math.min(...arr);\n\tlet max_value = Math.max(...arr);\n\tlet size = max_value - min_value + 1;\n\tlet count = Array(size).fill(0);\n\tfor (let i of arr) {\n\t\tcount[i - min_value]++;\n\t}\n\tlet arr_sorted = [];\n\tlet index = 0;\n\tfor (let i = 0; i < size; i++) {\n\t\tfor (let j = 0; j < count[i]; j++) {\n\t\t\tarr_sorted[index++] = i + min_value;\n\t\t}\n\t}\n\treturn arr_sorted;\n\t}\n\n// Test array\nlet arr = [8, 3, 2, 7, 4, 6, 9];\nconsole.log('Sorted array is:', countingSort(arr));",

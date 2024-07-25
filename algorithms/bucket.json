@@ -10,7 +10,7 @@
     "Space": "O(n + k)",
     "Stable": "Yes"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){let r=Math.min(...array),a=Math.max(...array);const t=Math.floor((a-r)/array.length)+1,e=[];for(let r=0;r<t;r++)e.push([]);for(let a=0;a<array.length;a++){e[Math.floor((array[a]-r)/array.length)].push(array[a])}for(let r=0;r<e.length;r++){const a=e[r].sort(((r,a)=>r-a));for(let r=0;r<a.length;r++)if(swap(r,array.indexOf(a[r])),await sleep(),firstRun)return}}",
   "Code": {
     "Python": "def bucket_sort(arr):\n\tmax_value = max(arr)\n\tbucket_size = int(max_value / 10) + 1  # Assuming 10 buckets for simplicity\n\tbuckets = [[] for _ in range(bucket_size)]\n\tfor i in arr:\n\t\tindex = i // bucket_size\n\t\tbuckets[index].append(i)\n\tfor i in range(bucket_size):\n\t\tbuckets[i].sort()\n\tresult = []\n\tfor bucket in buckets:\n\t\tresult.extend(bucket)\n\treturn result\n\n# Test array\narr = [8, 3, 2, 7, 4, 6, 9]\nprint('Sorted array is:', bucket_sort(arr))",
     "JavaScript": "function bucketSort(arr) {\n\tlet max_value = Math.max(...arr);\n\tlet bucket_size = Math.floor(max_value / 10) + 1; // Assuming 10 buckets for simplicity\n\tlet buckets = Array(bucket_size).fill([]);\n\tfor (let i of arr) {\n\t\tlet index = Math.floor(i / bucket_size);\n\t\tbuckets[index].push(i);\n\t}\n\tfor (let i = 0; i < bucket_size; i++) {\n\t\tbuckets[i].sort((a, b) => a - b);\n\t}\n\tlet result = [];\n\tfor (let bucket of buckets) {\n\t\tresult.push(...bucket);\n\t}\n\treturn result;\n\t}\n\n// Test array\nlet arr = [8, 3, 2, 7, 4, 6, 9];\nconsole.log('Sorted array is:', bucketSort(arr));",

@@ -10,7 +10,7 @@
     "Space": "O(n²)",
     "Stable": "Yes"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){const a=[...array];for(let r=0;r<array.length-1;r++){const n=Math.max(...a);if(a.splice(a.indexOf(n),1),console.log(n),swap(array.indexOf(n),array.length-r - 1),await sleep(),firstRun)return}}",
   "Code": {
     "Python": "import random\n\ndef spaghetti_sort(noodles):\n\tsorted_noodles = []\n\twhile len(noodles) > 0:\n\t\tlongest_noodle = max(noodles)\n\t\tsorted_noodles.append(longest_noodle)\n\t\tnoodles.remove(longest_noodle)\n\treturn sorted_noodles\n\n# Example usage with random noodle lengths\nnoodle_lengths = [random.randint(1, 100) for _ in range(20)]\nprint(\"Original noodles:\", noodle_lengths)\nsorted_noodles = spaghetti_sort(noodle_lengths.copy())  # Avoid modifying the original list\nprint(\"Sorted noodles:\", sorted_noodles)",
     "JavaScript": "function spaghettiSort(noodles) {\n\t// Sorts a list of noodle lengths (integers) using the spaghetti sort method.\n\tconst sortedNoodles = [];\n\twhile (noodles.length > 0) {\n\t\tconst longestNoodle = Math.max(...noodles);\n\t\tsortedNoodles.push(longestNoodle);\n\t\tnoodles.splice(noodles.indexOf(longestNoodle), 1);\n\t}\n\treturn sortedNoodles;\n}\n\n// Example usage with random noodle lengths\nconst noodleLengths = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100) + 1);\nconsole.log(\"Original noodles:\", noodleLengths);\nconst sortedNoodles = spaghettiSort([...noodleLengths]);\nconsole.log(\"Sorted noodles:\", sortedNoodles);",

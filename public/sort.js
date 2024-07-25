@@ -122,10 +122,10 @@ function success() {
 
     const bar = getBar(i);
     bar.classList.add('success');
-    setTimeout(() => bar.classList.remove('success'), 750);
+    setTimeout(() => bar.classList.remove('success'), 500);
     play(array[i]);
     i++;
-  }, 85);
+  }, 75);
 }
 
 // Shuffle Button
