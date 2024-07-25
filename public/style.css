@@ -478,6 +478,12 @@ footer {
   background-color: #111;
 }
 
+.compare {
+  transition: all 0.35s ease;
+  background-color: orange !important;
+  z-index: 2;
+}
+
 .swap {
   transition: all 0.35s ease;
   background-color: blue !important;

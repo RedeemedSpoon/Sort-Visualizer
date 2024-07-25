@@ -10,7 +10,7 @@
     "Space": "O(1)",
     "Stable": "No"
   },
-  "Algorithm": "",
+  "Algorithm": "async function sort(){let r=array.length;for(let a=Math.floor(r/2);a>0;a=Math.floor(a/2))for(let t=a;t<r;t+=1){let r,e=array[t];for(r=t;r>=a&&array[r-a]>e;r-=a)if(swap(r,r-a),await sleep(),firstRun)return;if(swap(r,array.indexOf(e)),await sleep(),firstRun)return}}",
   "Code": {
     "Python": "def shellsort(arr):\n\tn = len(arr)\n\t# Define the gap sequence (here, Knuth's sequence)\n\tgap = n // 2\n\twhile gap > 0:\n\t\t# Do an insertion sort for each sub-array with size gap\n\t\tfor i in range(gap, n):\n\t\t# The first element (arr[i]) is already in its place\n\t\ttemp = arr[i]\n\t\tj = i\n\t\twhile j >= gap and arr[j - gap] > temp:\n\t\t\tarr[j] = arr[j - gap]\n\t\t\tj -= gap\n\t\tarr[j] = temp\n\t\tgap //= 2\n\n# Test array\narr = [12, 34, 54, 2, 12, 90]\nshellsort(arr)\nprint('Sorted array is:', arr)",
     "JavaScript": "function shellsort(arr) {\n\tlet n = arr.length;\n\t// Define the gap sequence (here, Knuth's sequence)\n\tlet gap = Math.floor(n / 2);\n\twhile (gap > 0) {\n\t\t// Do an insertion sort for each sub-array with size gap\n\t\tfor (let i = gap; i < n; i++) {\n\t\t// The first element (arr[i]) is already in its place\n\t\tlet temp = arr[i];\n\t\tlet j = i;\n\t\twhile (j >= gap && arr[j - gap] > temp) {\n\t\t\tarr[j] = arr[j - gap];\n\t\t\tj -= gap;\n\t\t}\n\t\tarr[j] = temp;\n\t\t}\n\t\tgap = Math.floor(gap / 2);\n\t}\n}\n\n// Test array\nlet arr = [12, 34, 54, 2, 12, 90];\nshellsort(arr);\nconsole.log('Sorted array is:', arr);",

@@ -125,7 +125,7 @@ function success() {
     setTimeout(() => bar.classList.remove('success'), 500);
     play(array[i]);
     i++;
-  }, 75);
+  }, 50);
 }
 
 // Shuffle Button
