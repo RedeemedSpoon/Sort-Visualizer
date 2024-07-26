@@ -4,9 +4,9 @@
   "Author": "Andrei Broder and Jorge Stolfi",
   "Description": "Slowsort is a humorous and intentionally inefficient sorting algorithm designed as a parody of optimal sorting algorithms. It operates on the principle of 'multiply and surrender', the opposite of the divide-and-conquer approach used by efficient algorithms like quicksort.\n\nInstead of dividing the data structure for faster sorting, slowsort performs a single comparison between two randomly chosen elements. If they are in the wrong order (larger element comes before the smaller one), the algorithm simply surrenders and restarts the entire sorting process from scratch.\n\nThis repetitive comparison and restart approach guarantee a very slow sorting time, making slowsort unsuitable for any practical use. Its purpose lies in highlighting the importance of efficient sorting algorithms and demonstrating the significant performance difference between well-designed and deliberately inefficient approaches.",
   "Complexity": {
-    "Time": "Infinite",
-    "Best": "Infinite",
-    "Worst": "Infinite",
+    "Time": "O(n log(n))",
+    "Best": "O(n log(n))",
+    "Worst": "O(n log(n))",
     "Space": "O(n)",
     "Stable": "No"
   },

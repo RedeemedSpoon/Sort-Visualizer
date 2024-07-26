@@ -33,7 +33,7 @@
  <div id="range">
    <div>
      <label for="speed">Algorithm Speed <span id="speed-value">(2.00)</span> :</label>
-     <input type="range" step="0.01" min="1" max="5" value="2" id="speed" />
+     <input type="range" step="0.01" min="1" max="7" value="2" id="speed" />
    </div>
    <div>
      <label for="number">Array Size <span id="length-value">(100)</span> :</label>
@@ -69,16 +69,16 @@ async function sort() {
    <h1>Your Own Custom Sort:</h1>
    <p></p>To utilize this page, follow the instructions below and write your sorting algorithm code. After that, click 'Run' to visualize it. The page auto-evaluates your code without a 'Save' or 'Reset' button. Here are the essential functions:
    <ul>
-     <li><b>sort() :</b> Your primary code should be within this function. It should be an asynchronous function, using async/await syntax. No parameters are required for this function. all of the function listed below are promeses so use await on each one.</li>
+     <li><b>sort() :</b> Your primary code should be within this function. It should be an asynchronous function, using async/await syntax. No parameters are required for this function.</li>
      <li><b>compare() :</b> Use this function to compare two array elements. It takes two parameters, representing the indexes of the elements to be compared.</li>
      <li><b>swap() :</b> Use this function to swap two array elements. It takes two parameters, representing the indexes of the elements to be swapped.</li>
-     <li><b>flip() :</b> This function flips the array from the start of the array to the index in the parameter.</li>
-     <li><b>shuffle() :</b> This function shuffles the array. No parameters are needed.</li>
+     <li><b>flip() :</b> This function flips the array from a index of the array to another index. This function takes two parameters, the start and end indexes.</li>
+     <li><b>shuffle() :</b> This function shuffles the array randomly. No parameters are needed.</li>
    </ul>
    <p>Other important aspects include:</p>
    <ul>
      <li><b>'array' variable :</b> The predefined array to be sorted. You should not create your own, use this for comparison.</li>
-     <li><b>sleep() function :</b> Delays the code execution. No parameters are required. use this everytime you alter the array</li>
+     <li><b>sleep() function :</b> Delays the code execution. No parameters are required. use this everytime you alter the array. Use the await keyword in front of it.</li>
      <li><b>if (firstRun) return :</b> Stops the loop if the user clicks 'Shuffle' during a paused sort. Use this right after the sleep() function.</li>
    </ul>
    <p>For further guidance or custom sort creation, review the sort.js file in the console (accessible by pressing F12 or 'Inspect' button when right-clicking).</p>

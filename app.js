@@ -22,7 +22,7 @@ allSorts.forEach((sortAlgo) => {
   app.get(`/${sortAlgo}-sort`, async (req, res) => {
     const data = await getInfo(sortAlgo);
     const title = data['Name'];
-    res.render('playground.ejs', {year, title, data, legends});
+    res.render('playground.ejs', {year, title, data});
   });
 });
 

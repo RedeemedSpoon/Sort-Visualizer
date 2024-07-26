@@ -52,6 +52,21 @@ function getBar(index) {
   }
 }
 
+async function compare(i, j) {
+  let bar1 = getBar(i);
+  let bar2 = getBar(j);
+
+  [bar1, bar2].forEach((bar) => {
+    bar.classList.add('compare');
+    bar.addEventListener('transitionend', () => {
+      bar.classList.remove('compare');
+    });
+  });
+
+  await sleep();
+  return array[i] > array[j];
+}
+
 function swap(i, j, method) {
   let bar1 = getBar(i);
   let bar2 = getBar(j);
@@ -70,29 +85,25 @@ function swap(i, j, method) {
   });
 }
 
-async function flip(i) {
-  let start = 0;
-  while (start < i) {
-    swap(start, i, 'flip');
+async function flip(i, j) {
+  for (i; i <= j; i++) {
+    swap(i, j, 'flip');
     await sleep();
     if (firstRun) return;
-    start++;
-    i--;
+    j--;
   }
 }
 
 async function shuffle() {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
     swap(i, j, 'shuffle');
   }
 
-  await sleep();
-  if (firstRun) return;
-
-  await sleep();
-  if (firstRun) return;
+  for (let i = 0; i < 3; i++) {
+    await sleep();
+    if (firstRun) return;
+  }
 }
 
 function play(frequency) {
