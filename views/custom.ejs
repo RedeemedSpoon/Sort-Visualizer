@@ -40,6 +40,14 @@
      <input type="range" min="10" max="250" value="100" id="length" />
    </div>
  </div>
+  <div id='legend' style="margin-bottom: 5rem">
+  <% for (const legend of legends) { %>
+    <div class="card">
+      <div class='color' style='background-color:<%= Object.keys(legend) %>'></div>
+      <p><%= Object.values(legend) %></p>
+    </div>
+  <% } %>
+  </div>
  <textarea id="code-editor" spellcheck="false">// Your code goes here
 
 // Follow the instructions written below to implement your code within this sort visualizer
@@ -50,7 +58,7 @@ async function sort() {
  for (var i = 0; i < array.length; i++) {
    for (var j = 0; j < array.length - i - 1; j++) {
      if (array[j] > array[j + 1]) {
-       await swap(j, j + 1);
+       swap(j, j + 1);
        await sleep();
        if (firstRun) return;
      }
@@ -62,6 +70,7 @@ async function sort() {
    <p></p>To utilize this page, follow the instructions below and write your sorting algorithm code. After that, click 'Run' to visualize it. The page auto-evaluates your code without a 'Save' or 'Reset' button. Here are the essential functions:
    <ul>
      <li><b>sort() :</b> Your primary code should be within this function. It should be an asynchronous function, using async/await syntax. No parameters are required for this function. all of the function listed below are promeses so use await on each one.</li>
+     <li><b>compare() :</b> Use this function to compare two array elements. It takes two parameters, representing the indexes of the elements to be compared.</li>
      <li><b>swap() :</b> Use this function to swap two array elements. It takes two parameters, representing the indexes of the elements to be swapped.</li>
      <li><b>flip() :</b> This function flips the array from the start of the array to the index in the parameter.</li>
      <li><b>shuffle() :</b> This function shuffles the array. No parameters are needed.</li>

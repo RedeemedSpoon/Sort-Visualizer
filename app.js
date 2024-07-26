@@ -4,6 +4,7 @@ import * as fs from 'node:fs/promises';
 const app = express();
 const year = new Date().getFullYear();
 
+const legends = [{orange: 'Compare'}, {blue: 'Swap'}, {red: 'Flip'}, {yellow: 'Shuffle'}, {green: 'Done'}];
 const comparisonSort = ['heap', 'merge', 'tim', 'quick', 'shell', 'bubble', 'insertion', 'cocktail', 'gnome', 'pancake', 'selection'];
 const nonComparisonSort = ['pigeonhole', 'radix', 'counting', 'bucket', 'flash'];
 const otherSort = ['bead', 'spaghetti', 'bitonic', 'bogo', 'slow'];
@@ -21,13 +22,13 @@ allSorts.forEach((sortAlgo) => {
   app.get(`/${sortAlgo}-sort`, async (req, res) => {
     const data = await getInfo(sortAlgo);
     const title = data['Name'];
-    res.render('playground.ejs', {year, title, data});
+    res.render('playground.ejs', {year, title, data, legends});
   });
 });
 
 app.get('/custom', async (req, res) => {
   const title = 'Custom';
-  res.render('custom.ejs', {year, title});
+  res.render('custom.ejs', {year, title, legends});
 });
 
 app.get('/random', (req, res) => {
