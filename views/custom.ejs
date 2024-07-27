@@ -48,29 +48,28 @@
     </div>
   <% } %>
   </div>
- <textarea id="code-editor" spellcheck="false">// Your code goes here
+ <div id="instruction">
+   <h1>Your Own Custom Sort:</h1>
+  <div id="editor">// Your code goes here
 
-// Follow the instructions written below to implement your code within this sort visualizer
+// Follow the instructions below to implement your code within this sort visualizer
 
 // Here is an example of a bubble sort implementation
-
 async function sort() {
  for (var i = 0; i < array.length; i++) {
    for (var j = 0; j < array.length - i - 1; j++) {
-     if (array[j] > array[j + 1]) {
+     if (await compare(j, j + 1)) {
        swap(j, j + 1);
        await sleep();
        if (firstRun) return;
      }
    }
  }
-}</textarea>
- <div id="instruction">
-   <h1>Your Own Custom Sort:</h1>
+}</div>
    <p></p>To utilize this page, follow the instructions below and write your sorting algorithm code. After that, click 'Run' to visualize it. The page auto-evaluates your code without a 'Save' or 'Reset' button. Here are the essential functions:
    <ul>
      <li><b>sort() :</b> Your primary code should be within this function. It should be an asynchronous function, using async/await syntax. No parameters are required for this function.</li>
-     <li><b>compare() :</b> Use this function to compare two array elements. It takes two parameters, representing the indexes of the elements to be compared.</li>
+     <li><b>compare() :</b> Use this function to compare two array elements. It takes two parameters, representing the indexes of the elements to be compared. this require a await keyword to be used.</li>
      <li><b>swap() :</b> Use this function to swap two array elements. It takes two parameters, representing the indexes of the elements to be swapped.</li>
      <li><b>flip() :</b> This function flips the array from a index of the array to another index. This function takes two parameters, the start and end indexes.</li>
      <li><b>shuffle() :</b> This function shuffles the array randomly. No parameters are needed.</li>

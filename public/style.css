@@ -543,6 +543,19 @@ button:disabled:hover {
   background-color: #df9720;
 }
 
+#editor {
+  width: 100%;
+  height: 35rem;
+  border-radius: 1rem;
+  border: 7px solid #111;
+  line-height: 1.4 !important;
+  z-index: 3;
+}
+
+body.dark #editor {
+  border: 7px solid #333;
+}
+
 body.dark .hljs {
   background: #222;
   color: #ddd;

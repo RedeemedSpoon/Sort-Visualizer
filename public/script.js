@@ -13,6 +13,10 @@ selectorBtn.addEventListener('click', (e) => {
   toggleNavBar();
 });
 
+window.addEventListener('resize', () => {
+  navBar.classList.contains('slide-in') && toggleNavBar();
+});
+
 document.addEventListener('click', (e) => {
   if (!e.target.closest('nav')) {
     navBar.classList.contains('slide-in') && toggleNavBar();
@@ -56,6 +60,7 @@ const addDarkTheme = () => {
   themeSwitch.classList.add('night');
   themeSwitchBtn.classList.add('left');
   navBar.id = 'dark-mode';
+  changeAceTheme(true);
 };
 
 const removeDarkTheme = () => {
@@ -65,4 +70,10 @@ const removeDarkTheme = () => {
   themeSwitch.classList.remove('night');
   themeSwitchBtn.classList.remove('left');
   navBar.removeAttribute('id');
+  changeAceTheme(false);
+};
+
+const changeAceTheme = (isDark) => {
+  const theme = isDark ? 'merbivore_soft' : 'textmate';
+  typeof editor !== 'undefined' && editor.setTheme(`ace/theme/${theme}`);
 };

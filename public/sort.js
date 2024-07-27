@@ -7,10 +7,11 @@ let lineWidth = 0;
 let isRunning = false;
 let isMuted = false;
 let firstRun = true;
+let editor;
 
 // Functions
 async function run() {
-  customPage && eval(codeEditor.value);
+  customPage && eval(editor.getSession().getValue());
   await sort();
   if (!firstRun) {
     success();
@@ -220,18 +221,16 @@ lengthSlide.addEventListener('input', () => {
 
 // Code Section
 const customPage = window.location.href.match(/custom/);
-const codeEditor = document.querySelector('textarea');
 
 if (customPage) {
-  codeEditor.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      e.preventDefault();
-      const start = codeEditor.selectionStart;
-      const end = codeEditor.selectionEnd;
-      codeEditor.value = codeEditor.value.substring(0, start) + '\t' + codeEditor.value.substring(end);
-      codeEditor.selectionStart = start + 1;
-      codeEditor.selectionEnd = end + 1;
-    }
+  editor = ace.edit('editor');
+  editor.setOptions({
+    fontSize: '20px',
+    mode: 'ace/mode/javascript',
+    theme: 'ace/theme/textmate',
+    highlightActiveLine: false,
+    highlightGutterLine: false,
+    showPrintMargin: false,
   });
 } else {
   const codeBtn = document.querySelectorAll('.btn');
