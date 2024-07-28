@@ -1,7 +1,7 @@
 <%- include('header') %>
 <main>
   <div id="playground">
-    <h1 style="font-size: 50px"><%= data.Name %></h1>
+    <h1 class='big'><%= data.Name %></h1>
     <div>
       <button id="audio" title="Play Audio">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
@@ -33,7 +33,7 @@
   <div id="range">
     <div>
       <label for="speed">Algorithm Speed <span id="speed-value">(2.00)</span> :</label>
-      <input type="range" step="0.01" min="1" max="7" value="2" id="speed" />
+      <input type="range" step="0.01" min="1" max="10" value="2" id="speed" />
     </div>
     <div>
       <label for="number">Array Size <span id="length-value">(100)</span> :</label>
