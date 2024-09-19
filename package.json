@@ -1,5 +1,5 @@
 {
-  "name": "sort-visualizer",
+  "name": "sorts-visualizer",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
@@ -10,11 +10,11 @@
   "keywords": ["sorting", "visualizer", "algorithm"],
   "license": "GPL-3.0",
   "author": "RedeemedSpoon <QustoTemmo@protonmail.com> (https://github.com/RedeemedSpoon)",
-  "homepage": "https://github.com/RedeemedSpoon/Sort-Visualizer",
+  "homepage": "https://github.com/RedeemedSpoon/Sorts-Visualizer",
   "description": "An Interactive Sorting Visualizer Website For The Curious Nerds",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RedeemedSpoon/Sort-Visualizer.git"
+    "url": "git+https://github.com/RedeemedSpoon/Sorts-Visualizer.git"
   },
   "dependencies": {
     "ejs": "^3.1.10",
