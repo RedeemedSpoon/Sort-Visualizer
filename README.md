@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This interactive [Sorts-Visualizer](https://sort-visualizer-zxeo.onrender.com) is a web application designed to bring sorting algorithms to life. Whether you're a programmer, student, or curious about how data is organized, this tool allows you to see various sorting algorithms in action.
+This interactive [Sorts-Visualizer](https://sorts-visualizer.onrender.com) is a web application designed to bring sorting algorithms to life. Whether you're a programmer, student, or curious about how data is organized, this tool allows you to see various sorting algorithms in action.
 
 ## How To Use
 
@@ -58,4 +58,4 @@ The code of the web app is distributed under the GNU General Public License v3.0
 
 We welcome contributions to the project! You can contribute by reporting bugs, requesting features, or submitting pull requests with your code changes. Please, make sure to understand the coding style first you dive in.
 
-Thanks for taking interest in this [Sorts-Visualizer](https://sort-visualizer-zxeo.onrender.com) project.
+Thanks for taking interest in this [Sorts-Visualizer](https://sorts-visualizer.onrender.com) project.
