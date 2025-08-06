@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
-  "scripts": { 
+  "scripts": {
     "test": "bun app.js",
     "build": "bun build ./app.js --compile --outfile sort-visualizer"
   },
@@ -13,6 +13,6 @@
   "description": "An Interactive Sorting Visualizer Website For The Curious Nerds",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
+    "express": "^5.1.0"
   }
 }
