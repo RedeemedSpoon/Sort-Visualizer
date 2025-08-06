@@ -1,90 +1,90 @@
 <%- include('header') %>
 <main>
-  <div id="playground">
-    <h1 class='big'><%= data.Name %></h1>
-    <div>
-      <button id="audio" title="Play Audio">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
-          <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z" />
-          <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z" />
-          <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06" />
-        </svg>
-        <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
-        </svg>
-      </button>
-      <button id="execute" title="Run Algorithm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
-          <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
-        </svg>
-        <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
-          <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
-        </svg>
-      </button>
-      <button id="shuffle" title="Shuffle Array">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
-          <path d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
-          <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div id="canvas"></div>
-  <div id="range">
-    <div>
-      <label for="speed">Algorithm Speed <span id="speed-value">(2.00)</span> :</label>
-      <input type="range" step="0.01" min="1" max="10" value="2" id="speed" />
-    </div>
-    <div>
-      <label for="number">Array Size <span id="length-value">(100)</span> :</label>
-      <input type="range" min="10" max="250" value="100" id="length" />
-    </div>
-  </div>
-  <div id="description">
-    <div id="info">
-      <h1><%= data.Name %> :</h1>
-      <small style="margin-bottom: -10px">Author(s) : <%= data.Author %></small>
-      <small>Date : <%= data.Date %></small>
-      <p style="white-space: pre-line; margin-top: 10px"><%= data.Description %></p>
-    </div>
-    <div id="stats">
-      <table>
-        <tr>
-          <td class="label">Time Complexity</td>
-          <td><%= data.Complexity.Time %></td>
-        </tr>
-        <tr>
-          <td class="label">Best Case</td>
-          <td><%= data.Complexity.Best %></td>
-        </tr>
-        <tr>
-          <td class="label">Worst Case</td>
-          <td><%= data.Complexity.Worst %></td>
-        </tr>
-        <tr>
-          <td class="label">Space Complexity</td>
-          <td><%= data.Complexity.Space %></td>
-        </tr>
-        <tr>
-          <td class="label">Stable</td>
-          <td><%= data.Complexity.Stable %></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <h1 style="align-self: start;">Code Integration:</h1>
-  <p style="align-self: start; color: #e33; margin-bottom: 1rem">* the code might contain some bugs or may not work correctly</p>
-  <div id="code">
-    <div id="code-button">
-      <% for (const language in data.Code) { %>
-      <img class="<%= language %> btn" src="assets/languages/<%= language.toLowerCase() %>.svg" alt="<%= language %>" title="<%= language %>" />
-      <% } %>
-    </div>
-    <div id="code-content">
-      <% for (const language in data.Code) { %>
-      <pre><code class="<%= language %> content"><%= data.Code[language] %></code></pre>
-      <% } %>
-    </div>
-  </div>
+ <div id="playground">
+   <h1 class='big'><%= data.Name %></h1>
+   <div>
+     <button id="audio" title="Play Audio">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z" />
+         <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z" />
+         <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06" />
+       </svg>
+       <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+         <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
+       </svg>
+     </button>
+     <button id="execute" title="Run Algorithm">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+       </svg>
+       <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
+       </svg>
+     </button>
+     <button id="shuffle" title="Shuffle Array">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f9f9f9" viewBox="0 0 16 16">
+         <path d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5" />
+         <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
+       </svg>
+     </button>
+   </div>
+ </div>
+ <div id="canvas"></div>
+ <div id="range">
+   <div>
+     <label for="speed">Algorithm Speed <span id="speed-value">(2.00)</span> :</label>
+     <input type="range" step="0.01" min="1" max="10" value="2" id="speed" />
+   </div>
+   <div>
+     <label for="number">Array Size <span id="length-value">(100)</span> :</label>
+     <input type="range" min="10" max="250" value="100" id="length" />
+   </div>
+ </div>
+ <div id="description">
+   <div id="info">
+     <h1><%= data.Name %> :</h1>
+     <small style="margin-bottom: -10px">Author(s) : <%= data.Author %></small>
+     <small>Date : <%= data.Date %></small>
+     <p style="white-space: pre-line; margin-top: 10px"><%= data.Description %></p>
+   </div>
+   <div id="stats">
+     <table>
+       <tr>
+         <td class="label">Time Complexity</td>
+         <td><%= data.Complexity.Time %></td>
+       </tr>
+       <tr>
+         <td class="label">Best Case</td>
+         <td><%= data.Complexity.Best %></td>
+       </tr>
+       <tr>
+         <td class="label">Worst Case</td>
+         <td><%= data.Complexity.Worst %></td>
+       </tr>
+       <tr>
+         <td class="label">Space Complexity</td>
+         <td><%= data.Complexity.Space %></td>
+       </tr>
+       <tr>
+         <td class="label">Stable</td>
+         <td><%= data.Complexity.Stable %></td>
+       </tr>
+     </table>
+   </div>
+ </div>
+ <h1 style="align-self: start;">Code Integration:</h1>
+ <p style="align-self: start; color: #e33; margin-bottom: 1rem">* the code might contain some bugs or may not work correctly</p>
+ <div id="code">
+   <div id="code-button">
+     <% for (const language in data.Code) { %>
+     <img class="<%= language %> btn" src="assets/languages/<%= language.toLowerCase() %>.svg" alt="<%= language %>" title="<%= language %>" />
+     <% } %>
+   </div>
+   <div id="code-content">
+     <% for (const language in data.Code) { %>
+     <pre><code class="<%= language %> content"><%= data.Code[language] %></code></pre>
+     <% } %>
+   </div>
+ </div>
 </main>
 <%- include('footer') %>

@@ -1,1 +1,7 @@
+bun.lockb
+package-lock.json
+pnpm-lock.yaml
+*.lock
+
 node_modules
+sort-visualizer

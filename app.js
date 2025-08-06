@@ -49,4 +49,4 @@ const handleError = (req, res, next) => {
 };
 
 app.use(handleError);
-app.listen(process.env.PORT || 3000, () => console.log('server started'));
+app.listen(process.env.PORT || 8000, () => console.log('server started'));
