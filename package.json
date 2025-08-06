@@ -4,8 +4,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": { 
-    "test": "bun app.js" 
-    "build": "bun build ./app.js --compile --outfile sort-visualizer",
+    "test": "bun app.js",
+    "build": "bun build ./app.js --compile --outfile sort-visualizer"
   },
   "license": "GPL-3.0",
   "author": "RedeemedSpoon <QustoTemmo@protonmail.com> (https://github.com/RedeemedSpoon)",
