@@ -23,7 +23,7 @@ async function run() {
 async function sleep() {
   await until(() => isRunning || firstRun);
   return new Promise(function (resolve) {
-    setTimeout(resolve, 500 / speed);
+    setTimeout(resolve, 250 / speed);
   });
 }
 
@@ -57,15 +57,16 @@ async function compare(i, j) {
   let bar1 = getBar(i);
   let bar2 = getBar(j);
 
-  [bar1, bar2].forEach((bar) => {
-    bar.classList.add('compare');
-    bar.addEventListener('transitionend', () => {
-      bar.classList.remove('compare');
+  if (bar1 && bar2) {
+    [bar1, bar2].forEach((bar) => {
+      bar.classList.add('compare');
+      bar.addEventListener('transitionend', () => {
+        bar.classList.remove('compare');
+      });
     });
-  });
+  }
 
   await sleep();
-  return array[i] > array[j];
 }
 
 function swap(i, j, method) {

@@ -1,8 +1,8 @@
 {
   "Name": "Selection Sort",
-  "Date": "Ancient",
+  "Date": "1956",
   "Author": "Unknown",
-  "Description": "Selection sort works by repeatedly finding the minimum (or maximum) element in the unsorted portion of the array and swapping it with the first element in that unsorted portion. This process iterates until the entire array is sorted.\n\nSelection sort is conceptually easy to understand but suffers from a time complexity of O(n²) in the worst case. This is because it involves finding the minimum/maximum element in each pass, leading to redundant comparisons.",
+  "Description": "Selection sort is an in-place comparison sorting algorithm. It has an O(n²) time complexity, which makes it inefficient on large lists, and generally performs worse than the similar insertion sort. Selection sort is noted for its simplicity and has performance advantages over more complicated algorithms in certain situations, particularly where auxiliary memory is limited.",
   "Complexity": {
     "Time": "O(n²)",
     "Best": "O(n²)",
@@ -10,12 +10,12 @@
     "Space": "O(1)",
     "Stable": "No"
   },
-  "Algorithm": "async function sort(){for(let a=0;a<array.length-1;++a){let r=a;for(let t=a+1;t<array.length;t++)array[t]<array[r]&&(r=t);if(r!=a&&(swap(r,a),await sleep(),firstRun))return}}",
+  "Algorithm": "async function sort(){for(let a=0;a<array.length-1;++a){let r=a;for(let t=a+1;t<array.length;t++){await compare(t,r);if(array[t]<array[r])r=t}if(r!=a&&(swap(r,a),await sleep(),firstRun))return}}",
   "Code": {
-    "Python": "def selectionsort(arr):\n\tn = len(arr)\n\tfor i in range(n):\n\t\t# Find the index of the minimum element in the unsorted part\n\t\tmin_index = i\n\t\tfor j in range(i + 1, n):\n\t\t\tif arr[j] < arr[min_index]:\n\t\t\t\tmin_index = j\n\t\t# Swap the minimum element with the first element of the unsorted part\n\t\tarr[i], arr[min_index] = arr[min_index], arr[i]\n\n# Test array\narr = [64, 25, 12, 22, 11]\nselectionsort(arr)\nprint('Sorted array is:', arr)",
-    "JavaScript": "function selectionsort(arr) {\n\tlet n = arr.length;\n\tfor (let i = 0; i < n - 1; i++) {\n\t\t// Find the index of the minimum element in the unsorted part\n\t\tlet minIndex = i;\n\t\tfor (let j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIndex]) {\n\t\t\t\tminIndex = j;\n\t\t\t}\n\t\t}\n\t\t// Swap the minimum element with the first element of the unsorted part\n\t\t[arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];\n\t}\n\n\t// Test array\n\tlet arr = [64, 25, 12, 22, 11];\n\tselectionsort(arr);\n\tconsole.log('Sorted array is:', arr);\n}",
-    "Java": "public static void selectionsort(int[] arr) {\n\tint n = arr.length;\n\tfor (int i = 0; i < n - 1; i++) {\n\t\t// Find the index of the minimum element in the unsorted part\n\t\tint minIndex = i;\n\t\tfor (int j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIndex]) {\n\t\t\t\tminIndex = j;\n\t\t\t}\n\t\t}\n\t\t// Swap the minimum element with the first element of the unsorted part\n\t\tint temp = arr[i];\n\t\tarr[i] = arr[minIndex];\n\t\tarr[minIndex] = temp;\n\t}\n\n\t// Test array\n\tint[] arr = {64, 25, 12, 22, 11};\n\tselectionsort(arr);\n\tSystem.out.println(\"Sorted array is:\" + java.util.Arrays.toString(arr));\n}",
-    "Go": "func selectionsort(arr []int) {\n\tn := len(arr)\n\tfor i := 0; i < n - 1; i++ {\n\t\t// Find the index of the minimum element in the unsorted part\n\t\tminIndex := i\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[j] < arr[minIndex] {\n\t\t\t\tminIndex = j\n\t\t\t}\n\t\t}\n\t\t// Swap the minimum element with the first element of the unsorted part\n\t\tarr[i], arr[minIndex] = arr[minIndex], arr[i]\n\t}\n\n\t// Test array\n\tarr := []int{64, 25, 12, 22, 11}\n\tselectionsort(arr)\n\tfmt.Println(\"Sorted array is:\", arr)\n}",
-    "C": "void selectionsort(int arr[], int n) {\n\tfor (int i = 0; i < n - 1; i++) {\n\t\t// Find the index of the minimum element in the unsorted part\n\t\tint minIndex = i;\n\t\tfor (int j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIndex]) {\n\t\t\t\tminIndex = j;\n\t\t\t}\n\t\t}\n\t\t// Swap the minimum element with the first element of the unsorted part\n\t\tint temp = arr[i];\n\t\tarr[i] = arr[minIndex];\n\t\tarr[minIndex] = temp;\n\t}\n\n\t// Test array\n\tint arr[] = {64, 25, 12, 22, 11};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tselectionsort(arr, n);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n}"
+    "Python": "def selection_sort(arr):\n\tn = len(arr)\n\tfor i in range(n):\n\t\tmin_idx = i\n\t\tfor j in range(i + 1, n):\n\t\t\tif arr[j] < arr[min_idx]:\n\t\t\t\tmin_idx = j\n\t\tarr[i], arr[min_idx] = arr[min_idx], arr[i]",
+    "JavaScript": "function selectionSort(arr) {\n\tlet n = arr.length;\n\tfor (let i = 0; i < n; i++) {\n\t\tlet minIdx = i;\n\t\tfor (let j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIdx]) {\n\t\t\t\tminIdx = j;\n\t\t\t}\n\t\t}\n\t\t[arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];\n\t}\n}",
+    "Java": "public static void selectionSort(int[] arr) {\n\tint n = arr.length;\n\tfor (int i = 0; i < n - 1; i++) {\n\t\tint minIdx = i;\n\t\tfor (int j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIdx]) {\n\t\t\t\tminIdx = j;\n\t\t\t}\n\t\t}\n\t\tint temp = arr[minIdx];\n\t\tarr[minIdx] = arr[i];\n\t\tarr[i] = temp;\n\t}\n}",
+    "Go": "func selectionSort(arr []int) {\n\tn := len(arr)\n\tfor i := 0; i < n-1; i++ {\n\t\tminIdx := i\n\t\tfor j := i + 1; j < n; j++ {\n\t\t\tif arr[j] < arr[minIdx] {\n\t\t\t\tminIdx = j\n\t\t\t}\n\t\t}\n\t\tarr[i], arr[minIdx] = arr[minIdx], arr[i]\n\t}\n}",
+    "C": "void selectionSort(int arr[], int n) {\n\tfor (int i = 0; i < n - 1; i++) {\n\t\tint minIdx = i;\n\t\tfor (int j = i + 1; j < n; j++) {\n\t\t\tif (arr[j] < arr[minIdx]) {\n\t\t\t\tminIdx = j;\n\t\t\t}\n\t\t}\n\t\tint temp = arr[minIdx];\n\t\tarr[minIdx] = arr[i];\n\t\tarr[i] = temp;\n\t}\n}"
   }
 }

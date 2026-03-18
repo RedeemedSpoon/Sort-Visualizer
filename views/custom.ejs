@@ -56,14 +56,16 @@
 
 // Here is an example of a bubble sort implementation
 async function sort() {
- for (var i = 0; i < array.length; i++) {
-   for (var j = 0; j < array.length - i - 1; j++) {
-     if (await compare(j, j + 1)) {
-       swap(j, j + 1);
-       await sleep();
-       if (firstRun) return;
-     }
+ for (let a = 0; a < array.length; a++) {
+  for (let r = 0; r < array.length - a - 1; r++) {
+   await compare(r, r + 1);
+   if (array[r] > array[r + 1]) {
+    swap(r, r + 1);
+    await sleep();
+
+    if (firstRun) return
    }
+  }
  }
 }</div>
    <p></p>To utilize this page, follow the instructions below and write your sorting algorithm code. After that, click 'Run' to visualize it. The page auto-evaluates your code without a 'Save' or 'Reset' button. Here are the essential functions:

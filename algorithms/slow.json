@@ -1,21 +1,21 @@
 {
   "Name": "Slow Sort",
-  "Date": "1984",
+  "Date": "1986",
   "Author": "Andrei Broder and Jorge Stolfi",
-  "Description": "Slowsort is a humorous and intentionally inefficient sorting algorithm designed as a parody of optimal sorting algorithms. It operates on the principle of 'multiply and surrender', the opposite of the divide-and-conquer approach used by efficient algorithms like quicksort.\n\nInstead of dividing the data structure for faster sorting, slowsort performs a single comparison between two randomly chosen elements. If they are in the wrong order (larger element comes before the smaller one), the algorithm simply surrenders and restarts the entire sorting process from scratch.\n\nThis repetitive comparison and restart approach guarantee a very slow sorting time, making slowsort unsuitable for any practical use. Its purpose lies in highlighting the importance of efficient sorting algorithms and demonstrating the significant performance difference between well-designed and deliberately inefficient approaches.",
+  "Description": "Slowsort is a humorous sorting algorithm. It is based on the principle of multiply and surrender, a tongue-in-cheek joke of divide and conquer. It was published in 1986 by Andrei Broder and Jorge Stolfi in their paper Pessimal Algorithms and Simplexity Analysis. This algorithm is of multiply and surrender type; the problem is divided into subproblems, but the subproblems are not solved independently.",
   "Complexity": {
-    "Time": "O(n log(n))",
-    "Best": "O(n log(n))",
-    "Worst": "O(n log(n))",
+    "Time": "O(n^(log n))",
+    "Best": "O(n^(log n))",
+    "Worst": "O(n^(log n))",
     "Space": "O(n)",
     "Stable": "No"
   },
-  "Algorithm": "async function sort(){await async function a(t,n,r){if(n>=r)return;let i=parseInt((n+r)/2,10);await a(t,n,i),await a(t,i+1,r),t[r]<t[i]&&(swap(i,r),await sleep(),firstRun)||await a(t,n,r-1)}(array,0,array.length-1)}",
+  "Algorithm": "async function sort(){await async function a(t,n,r){if(n>=r)return;let i=parseInt((n+r)/2,10);await a(t,n,i),await a(t,i+1,r);await compare(r,i);if(t[r]<t[i]){if(swap(i,r),await sleep(),firstRun)return}await a(t,n,r-1)}(array,0,array.length-1)}",
   "Code": {
-    "Python": "def slowsort(arr, lo, hi):\n\tif lo < hi:\n\t\tmid = (lo + hi) // 2\n\t\tmax_left = slowsort(arr, lo, mid)\n\t\tmax_right = slowsort(arr, mid + 1, hi)\n\t\tarr[hi] = max(max_left, max_right)\n\t\tslowsort(arr, lo, hi - 1)\n\treturn arr[hi]\n\n# Test array\narr = [12, 11, 13, 5, 6, 7]\nprint('Sorted array is:', slowsort(arr.copy(), 0, len(arr) - 1))",
-    "JavaScript": "function slowsort(arr, lo, hi) {\n\tif (lo < hi) {\n\t\tconst mid = Math.floor((lo + hi) / 2);\n\t\tconst maxLeft = slowsort(arr, lo, mid);\n\t\tconst maxRight = slowsort(arr, mid + 1, hi);\n\t\tarr[hi] = Math.max(maxLeft, maxRight);\n\t\tslowsort(arr, lo, hi - 1);\n\t}\n\treturn arr[hi];\n}\n\n// Test array\nconst arr = [12, 11, 13, 5, 6, 7];\nconsole.log('Sorted array is:', slowsort(arr.slice(), 0, arr.length - 1));",
-    "Java": "public class SlowSort {\n\tpublic static void slowsort(int[] arr, int lo, int hi) {\n\t\tif (lo < hi) {\n\t\t\tint mid = (lo + hi) / 2;\n\t\t\tint maxLeft = slowsort(arr, lo, mid);\n\t\t\tint maxRight = slowsort(arr, mid + 1, hi);\n\t\t\tarr[hi] = Math.max(maxLeft, maxRight);\n\t\t\tslowsort(arr, lo, hi - 1);\n\t\t}\n\t}\n\n\tpublic static void main(String[] args) {\n\t\tint[] arr = {12, 11, 13, 5, 6, 7};\n\t\tslowsort(arr, 0, arr.length - 1);\n\t\tSystem.out.print(\"Sorted array is: \");\n\t\tfor (int num : arr) {\n\t\t\tSystem.out.print(num + \" \");\n\t\t}\n\t}\n}",
-    "Go": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc slowsort(arr []int, lo, hi int) []int {\n\tif lo < hi {\n\t\tmid := (lo + hi) / 2\n\t\tmaxLeft := slowsort(arr[:mid+1], lo, mid)\n\t\tmaxRight := slowsort(arr[mid+1:], mid+1, hi)\n\t\tarr[hi] = max(maxLeft[len(maxLeft)-1], maxRight[len(maxRight)-1])\n\t\tslowsort(arr[:hi], lo, hi-1)\n\t}\n\treturn arr\n}\n\nfunc max(a, b int) int {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc main() {\n\tarr := []int{12, 11, 13, 5, 6, 7}\n\tsortedArr := slowsort(arr, 0, len(arr)-1)\n\tfmt.Println(\"Sorted array is:\", sortedArr)\n}",
-    "C": "#include <stdio.h>\n\nint max(int a, int b) {\n\treturn (a > b) ? a : b;\n}\n\nvoid slowsort(int arr[], int lo, int hi) {\n\tif (lo < hi) {\n\t\tint mid = (lo + hi) / 2;\n\t\tslowsort(arr, lo, mid);\n\t\tslowsort(arr, mid + 1, hi);\n\t\tarr[hi] = max(arr[hi], max(arr[lo], arr[mid]));\n\t\tslowsort(arr, lo, hi - 1);\n\t}\n}\n\nint main() {\n\tint arr[] = {12, 11, 13, 5, 6, 7};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tslowsort(arr, 0, n - 1);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n\tprintf(\"\\n\");\n\treturn 0;\n}"
+    "Python": "def slow_sort(arr, i, j):\n\tif i >= j:\n\t\treturn\n\tm = (i + j) // 2\n\tslow_sort(arr, i, m)\n\tslow_sort(arr, m + 1, j)\n\tif arr[j] < arr[m]:\n\t\tarr[j], arr[m] = arr[m], arr[j]\n\tslow_sort(arr, i, j - 1)",
+    "JavaScript": "function slowSort(arr, i, j) {\n\tif (i >= j) return;\n\tlet m = Math.floor((i + j) / 2);\n\tslowSort(arr, i, m);\n\tslowSort(arr, m + 1, j);\n\tif (arr[j] < arr[m]) {\n\t\t[arr[j], arr[m]] = [arr[m], arr[j]];\n\t}\n\tslowSort(arr, i, j - 1);\n}",
+    "Java": "public static void slowSort(int[] arr, int i, int j) {\n\tif (i >= j) return;\n\tint m = (i + j) / 2;\n\tslowSort(arr, i, m);\n\tslowSort(arr, m + 1, j);\n\tif (arr[j] < arr[m]) {\n\t\tint temp = arr[j];\n\t\tarr[j] = arr[m];\n\t\tarr[m] = temp;\n\t}\n\tslowSort(arr, i, j - 1);\n}",
+    "Go": "func slowSort(arr []int, i, j int) {\n\tif i >= j {\n\t\treturn\n\t}\n\tm := (i + j) / 2\n\tslowSort(arr, i, m)\n\tslowSort(arr, m+1, j)\n\tif arr[j] < arr[m] {\n\t\tarr[j], arr[m] = arr[m], arr[j]\n\t}\n\tslowSort(arr, i, j-1)\n}",
+    "C": "void slowSort(int arr[], int i, int j) {\n\tif (i >= j) return;\n\tint m = (i + j) / 2;\n\tslowSort(arr, i, m);\n\tslowSort(arr, m + 1, j);\n\tif (arr[j] < arr[m]) {\n\t\tint temp = arr[j];\n\t\tarr[j] = arr[m];\n\t\tarr[m] = temp;\n\t}\n\tslowSort(arr, i, j - 1);\n}"
   }
 }
